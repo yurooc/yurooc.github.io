@@ -6,7 +6,16 @@
     <description>Recent content on YuBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Nov 2023 03:01:57 +0800</lastBuildDate><atom:link href="https://yurooc.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Nov 2023 03:21:00 +0800</lastBuildDate><atom:link href="https://yurooc.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git基本命令</title>
+      <link>https://yurooc.github.io/blog/git/</link>
+      <pubDate>Thu, 09 Nov 2023 03:21:00 +0800</pubDate>
+      
+      <guid>https://yurooc.github.io/blog/git/</guid>
+      <description>Git常用的基本命令</description>
+    </item>
+    
     <item>
       <title>Hello</title>
       <link>https://yurooc.github.io/about/</link>
