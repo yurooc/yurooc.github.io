@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>计算机网络面经 | YuBlog</title>
+<meta name="keywords" content="计算机网络">
+<meta name="description" content="计算机网络面经">
+<meta name="author" content="Yu">
+<link rel="canonical" href="https://yurooc.github.io/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta name="referrer" content="no-referrer-when-downgrade">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.678b5c47efa744d2e0dd0d61101075e6aecdc9a0631e7ad8538f4ec0cca79273.css" integrity="sha256-Z4tcR&#43;&#43;nRNLg3Q1hEBB15q7NyaBjHnrYU49OwMynknM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://yurooc.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://yurooc.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://yurooc.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://yurooc.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://yurooc.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="计算机网络面经" />
+<meta property="og:description" content="计算机网络面经" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yurooc.github.io/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/" /><meta property="article:section" content="Blog" />
+<meta property="article:published_time" content="2023-11-25T00:29:00+08:00" />
+<meta property="article:modified_time" content="2023-11-25T00:29:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="计算机网络面经"/>
+<meta name="twitter:description" content="计算机网络面经"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Blogs",
+      "item": "https://yurooc.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "计算机网络面经",
+      "item": "https://yurooc.github.io/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "计算机网络面经",
+  "name": "计算机网络面经",
+  "description": "计算机网络面经",
+  "keywords": [
+    "计算机网络"
+  ],
+  "articleBody": "计算机网络篇 1.HTTP常见状态码 1xx: 接受，继续处理\n101：在HTTP升级为WebSocket的时候，如果服务器同意变更，就会发送状态码 101。\n103（Early Hints）：客户端应在服务端返回HTML前开始预加载资源\n200: 成功，并返回数据\n201: 已创建\n202: 已接受\n203: 成功，但未授权\n204: 成功，无内容\n205: 成功，重置内容\n206: 成功，部分内容，用来实现断点续传\n301: 永久重定向。场景是使用域名跳转，新的URL在响应中给出\n302: 临时重定向。场景是未登陆的用户跳转登录；浏览器默认使用get方式重新发出请求，会导致第一次以post请求的参数丢失；（才衍生出了307状态码）\n303: 临时重定向，强制浏览器将请求方法从POST改到GET；\n304: 资源未修改，可使用缓存（协商缓存）\n305: 需代理访问\n307: 307 和 302 一样是临时重定向，唯一的区别在于，307 状态码不允许浏览器将原本为 POST 的请求重定向到 GET 请求上。\n308: 308 和 301 一样是永久重定向，唯一的区别在于，308 状态码不允许浏览器将原本为 POST 的请求重定向到 GET 请求上。\n400: 请求语法错误\n401: 要求身份认证\n403: 拒绝请求\n404: 资源不存在\n405: 请求方法不允许\n500: 服务器错误\n502: 网关错误：服务器作为网关或代理出现错误\n503: 服务不可用：服务器目前无法使用\n504: 网关超时：网关或代理服务器，未及时获取请求\n详细说说 103 状态码 (Early Hints) 2022年 6月Chrome 官方宣布在 chrome 103 版本对 HTTP 103 状态码提供了支持；\nChrome 官方也宣布在 chrome 106 版本对 HTTP/2 Server Push进行禁用；\n正常情况下，我们需要等待 HTML 页面的返回后，才可以知道下一步需要去加载哪些 JS、CSS文件，这中间有一段的等待时间就被浪费掉了；这尤其在SSR项目中尤为明显； HTTP 103 状态码可以返回一个初步的 HTTP 响应，浏览器可以使用这些提示来预连接，并在等待资源响应的同时请求子资源。 它在 SSR 项目里面会非常有用；在SPA项目里面，大部分的逻辑都在客户端，HTML 很小，这时候我们只需要用常规的preload、preconnect之类的手段就可以了； 103 状态码和 HTTP2服务器推送 的区别 使用HTTP2服务器推送时，很多资源其实浏览器第一次请求就已经缓存下来了，但是服务端推送仍然会推送已缓存的资源，会导致网络带宽浪费；这是它的一个缺点，所以使用的人也较少；\nHTTP2服务器推送是直接发送资源，而103状态码只是向浏览器发送资源提示，浏览器可以控制是否需要这些资源，因为相同的资源可能已经在浏览器缓存过了； 总的来说，HTTP103 Early Hints 它能够解决网络带宽浪费的问题，可以说是 HTTP/2 Server Push 的升级版。不过目前还没有完全覆盖服务器推送的所有用例； 为什么需要 302 307 308 状态码 301: 永久重定向。场景是使用域名跳转，新的URL在响应中给出 302: 临时重定向。场景是未登陆的用户跳转登录；浏览器默认使用get方式重新发出请求，会导致第一次以post请求的参数丢失；（才衍生出了307状态码） 303: 临时重定向，强制浏览器将请求方法从POST改到GET； 307: 307 和 302 一样是临时重定向，唯一的区别在于，307 状态码不允许浏览器将原本为 POST 的请求重定向到 GET 请求上。 308: 308 和 301 一样是永久重定向，唯一的区别在于，308 状态码不允许浏览器将原本为 POST 的请求重定向到 GET 请求上。 2.从输入URL到呈现页面过程 这个流程可以分为两部分来说，第一部分是浏览器请求响应的过程；\n输入URL：用户在地址栏按下回车，先检查输入的是搜索关键字还是符合url的规则，然后将其组装成完整 URL进行访问； 检查缓存：然后会先检查本地强缓存是否可用，如果可用就直接从缓存中返回资源； DNS解析：如果强缓存不可用，就会进行DNS解析，通过递归查询和迭代查询解析域名来得到域名对应的IP地址； DNS查询的顺序为：浏览器IP缓存，操作系统IP缓存，Hosts文件，DNS根服务器； 建立TCP连接：得到IP地址后，会进行三次握手去建立TCP连接； 发送HTTP请求：建立TCP连接后发送 HTTP 请求，发送HTTP请求时会携带上cookie和缓存的标识字段； 负载均衡：服务端网关收到HTTP请求后，可能会有一系列的负载均衡处理，通过反向代理分配给对应集群中的服务器去执行； 服务器返回响应：服务器收到请求后，先根据请求头的缓存标识来判断缓存是否生效，生效就返回304状态码；不生效就返回资源和200状态码（在返回200的响应报文前，还可能会返回103的响应报文）； 浏览器接收HTTP响应：浏览器接受到HTTP响应后根据 connection:keep-alive 的值来选择通过 四次挥手来断开TCP连接，或者保留； 同时浏览器还会缓存响应头里的缓存标识字段； 到此为止，浏览器请求响应的过程就结束了；第二部分就是浏览器解析并渲染的过程；\n构建DOM树：浏览器从上到下解析 HTML 文档生成DOM节点树； 构建CSSOM树：浏览器解析遇到样式时，会进行异步下载，下载完成后构建 CSSOM树； 值得一提的是，当遇到不带async和defer的script时，会阻止解析HTML并进行下载和执行； 并且CSS和DOM渲染，JS和DOM解析之间是有阻塞关系的； 构建渲染树：根据DOM节点树和CSSOM树构建渲染树（Render）； 布局（Layout）：根据渲染树将DOM节点树每一个节点布局在屏幕上的正确位置； 绘制（Paint）：绘制所有节点，为每一个节点适用对应的样式，绘制到屏幕上； 绘制的过程中还有很多细节，包括说： 构建图层树：需要对布局树进行分层，生成图层树（比如说Z轴排序） 生成绘制列表：将图层的绘制拆分为很多的绘制指令，并按顺序组成绘制列表，并提交到合成线程中； 光栅化（栅格化）生成位图：合成线程将图层划分成图块，并在光栅化线程池中将图块转换成位图。 同时因为用户只能看到视口的这一部分，所以合成线程就会按照视口附近的图块来优先生成位图， 显示：一旦所有的图块都被光栅化，合成线程就会提交绘图指令给浏览器进程；浏览器进程生成页面并显示到屏幕上； 3.TCP、UDP TCP、UDP 的特点 TCP是一个面向连接的传输层协议。是可靠的、基于字节流的；TCP还具有超时重传、拥塞控制的机制； 而UDP是一个无连接的传输层协议。 面向连接指的是需要三次握手建立链接\n可靠性指 TCP 具有 确认应答ACK 和 序列号来实现可靠传输；\n基于字节流指的是：UDP的传输是将一个完整的用户消息发送一个UDP报文；而TCP是将一条用户消息根据滑动窗口的字节大小，拆分成多个TCP报文段（TCP将数据看作一连串字节流）\nTCP 和 UDP 的区别 TCP 是面向连接的，UDP 是无连接的即发送数据前不需要先建立链接 TCP 是可靠传输，保证数据正确且有序；UDP是不可靠的，可能丢包或乱序 TCP 是面向字节流，UDP 面向报文，并且网络出现拥塞不会使得发送速率降低 TCP 首部开销大，最小20字节最大60字节，而 UDP 首部开销小，仅8字节 TCP 只能是 1 对 1 的，UDP 支持 1 对 1,1 对多； HTTP 和 TCP 的不同 HTTP的责任是去定义数据，在两台计算机相互传递信息时，HTTP规定了每段数据以什么形式表达才是能够被另外一台计算机理解。 而TCP所要规定的是数据应该怎么传输才能稳定且高效 TCP 的可靠性 序列号：TCP给每一个包一个序号，保证接收端的按序接受； 确认应答ACK：接收端收到包就会回一个相应的确认ACK，如果发送端在一个往返时延内未收到确认就会重传； 流量控制：通过控制发送者的发送速度来缓解接收者的拥塞； 拥塞控制：当网络出现拥塞的时候，TCP能够减小向网络注入数据的速率和数量，缓解拥塞； 流量控制 和 拥塞控制 的区别 流量控制 是作用于接收者的，它是控制发送者的发送速度从而使接收者来得及接收，防止丢失数据包的。 拥塞控制 是作用于网络的，它是防止过多的数据注入到网络中，避免出现网络负载过大的情况 流量控制机制 \u0026 滑动窗口 对于发送端和接收端来说，TCP需要将发送的数据放到发送缓冲区，接收的数据放到接收缓冲区； 而流量控制的目的，就是为了提供一种机制：让发送端可以根据接收端的实际接受能力控制发送的数据量； TCP通过滑动窗口实现流量控制的机制，而滑动窗口大小是通过TCP首部的窗口大小字段来通知对方； TCP协议的头部信息中，有一个16位字段的窗口大小，窗口大小的内容就是接收端接收数据缓冲区的剩余大小；当接收端缓冲区面临溢出时，就会设置成一个更小值取告诉发送端要控制发送的数据量；发送端收到后就会对数据发送量进行调整，形成完整的流量控制； 拥塞控制机制 体现在四个方面\n慢启动：开始的时候不要发送大量数据，先测试一下网络，然后慢慢由小到大的增加拥塞窗口大小；直到达到慢启动阈值； 拥塞避免：一旦判断网络出现拥塞，就将慢启动阈值设置为出现拥塞时一半的大小，并把拥塞窗口设为1，再重新开始慢启动算法 快速重传：就是接收方在收到一个失序的报文后立即发出重复确认，快重传算法规定发送方只要连续收到三个重复确认就立即重传对方尚未收到的报文段，而不用继续等重传计时器到期； 快速恢复：当发送方连续收到三个重复确认时，就不执行慢启动算法而是执行拥塞避免算法； 拥塞窗口 是指发送端还可以传输的数据量大小，上文提到有通过流量控制机制来限制发送窗口的大小，而最终会取两者之间的较小值；\n三次握手 TCP 三次握手流程 第一步：客户端发送SYN报文到服务端发起握手 第二步：服务端收到SYN报文之后回复SYN和ACK报文给客户端 第三步：客户端收到SYN和ACK，向服务端发送一个ACK报文 TCP 快速打开（TFO） TFO 就是为了减少三次握手带来的延时，\n在 TFO 的流程中，首轮三次握手服务端会计算得到一个 TFO cookie，放到 TCP 报文的 Fast Open里面 客户端拿到这个 cookie 后缓存下来，并完成正常的三次握手； 下一次的三次握手，客户端就会将之前的 cookie 和 HTTP请求、SYN 发给服务端 服务端验证 cookie 是否合法，如果合法就正常返回 SYN+ACK；并且返回HTTP响应； 最后完成三次握手的剩余流程； 三次握手的意义 客户端和服务端都需要直到各自可收发，因此需要三次握手\n第一次握手成功让服务端知道了客户端具有发送能力 第二次握手成功让客户端知道了服务端具有接收和发送能力，但此时服务端并不知道客户端是否接收到了自己发送的消息（如果服务端这时立刻给客户端发送数据，这个时候客户端可能还没有准备好接收数据） 第三次握手让服务端知道了客户端做好了接收自己发送的消息的准备 为什么 TCP 建立连接需要三次握手，而不是两次 因为这是为了防止出现失效的连接请求报文段被服务端接收的情况，从而产生错误。 三次握手过程中可以携带数据吗 第一次、第二次握手不可以携带数据，因为一握二握时还没有建立连接，会让服务器容易受到攻击（只需要在第一次握手的报文里放大量数据，服务器就会消耗更大的时间和内存空间去处理数据） 而第三次握手，此时客户端已经处于 (已建立连接状态) ，对于客户端来说，已经建立起连接了，并且也已经知道服务器的接收、发送能力是正常的了，所以能携带数据也是没问题的。 四次挥手 为什么要四次挥手 \u0026 四次挥手流程 因为TCP是全双工通信，不能单方面完全断开连接\n第一次挥手，客户端发送FIN给服务端 第二次挥手，服务端回复ACK给客户端，服务端还可以继续向客户端发送数据（若数据没有发送完） 第三次挥手，服务端发送FIN给客户端 第四次挥手，客户端回复ACK给服务端，客户端经过 2MSL 的时间后断开，服务端接收到了客户端发出的ACK后立刻断开了到客户端的连接 至此TCP连接才完全断开。\n四次挥手结束等待 2MSL 的意义 虽然按道理，四个报文都发送完毕，就可以立即断开，但是我们必须假设网络是不可靠的，有可以最后一个ACK丢失。 如果最后一个 ACK 丢失了，那么服务端没有收到 ACK 就会发起重传；再次发送 FIN 给客户端； 客户端收到重传的 FIN 后，会重发 ACK 并重新等待 2MSL 的时间来确保服务端收到了自己的 ACK； 总结：\n1 个 MSL 确保第四次挥手中主动关闭方最后的 ACK 报文最终能达到对端 1 个 MSL 确保对端没有收到 ACK 重传的 FIN 报文可以到达 4.HTTP HTTP 是超文本传输协议，HTTP 是一个在计算机世界里专门在两点之间传输文字、图片、音频、视频等超文本数据的约定和规范。\nHTTP 的特点 特点：无连接、无状态、灵活\n无连接：每一次请求都要连接一次，请求结束就会断掉，不会保持连接（HTTP1.1后可以保持连接长连）； 无状态：每一次请求都是独立的，请求结束不会记录连接的任何信息，减少了网络开销，这是优点也是缺点 灵活：通过http协议中头部的Content-Type标记，可以传输任意数据类型的数据对象(文本、图片、视频等等)，非常灵活 缺点：无状态、不安全、明文传输、队头阻塞\n无状态：请求不会记录任何连接信息，就无法区分多个请求发起者身份是不是同一个客户端的； 不安全：明文传输可能被窃听，缺少身份认证也可能遭遇伪装，还有缺少报文完整性验证可能遭到篡改 明文传输：报文(header部分)使用的是明文，直接将信息暴露给了外界，WIFI陷阱就是复用明文传输的特点，诱导你连上热点，然后疯狂抓取你的流量，从而拿到你的敏感信息 队头阻塞：开启长连接(下面有讲)时，只建立一个TCP连接，同一时刻只能处理一个请求，那么当请求耗时过长时，其他请求就只能阻塞状态(如何解决下面有讲) HTTP 报文组成 http报文：由请求报文和响应报文组成\n请求报文：由请求行、请求头、空行、请求体四部分组成\n响应报文：由状态行、响应头、空行、响应体四部分组成\n请求行：包括请求的方法，路径和协议版本 请求头/响应头：包含了请求的一些附加的信息，一般是以键值的形式成对存在 空行：协议中规定请求头和请求主体间必须用一个空行隔开，用来区分首部与实体，因为请求头都是key:value的格式，当解析遇到空行时，服务端就知道下一个不再是请求头部分，就该当作请求体来解析了； 请求体：对于post请求，所需要的参数都不会放在url中，这时候就需要一个载体了，这个载体就是请求主体 状态行：包含http协议及版本、数字状态码、状态码英文名称 响应体：服务端返回的数据 HTTP 的请求方法 HTTP1.0定义了三种请求方法： GET, POST 和 HEAD方法\nHTTP1.1新增了五种请求方法：OPTIONS, PUT, DELETE, TRACE 和 CONNECT\nhttp/1.1规定了以下请求方法(注意，都是大写):\nGET： 请求获取Request-URI所标识的资源\nPOST： 一般用于修改Request-URI的资源\nHEAD： 请求获取由Request-URI所标识的资源的响应消息报头\nPUT： 请求服务器存储一个资源\nDELETE： 请求服务器删除对应所标识的资源\nTRACE： 请求服务器回送收到的请求信息，主要用于测试或诊断\nCONNECT： 建立连接隧道，用于代理服务器\nOPTIONS： CORS跨域请求的预检请求；\nGET 和 POST的区别 从Restful语义来看：GET用来无副作用的请求资源，理应幂等，POST用来新资源； 从参数角度来看：GET请求一般放在URL中，POST请求放在请求体中，看起来post比get安全，但是在抓包的情况下都是一样的（所以面试的时候别再说POST比GET安全了）。 从编码角度看：GET只能进行 url 编码，参数的数据类型只接受ASCII字符，而POST支持更多的编码类型且不对数据类型限制。 从回退角度来看：GET在浏览器回退时是无害的，而POST会再次发起请求 从记录角度来看：GET请求参数会被完整保留在浏览器的历史记录里，而POST中的参数不会被保留 从发送角度来看：GET请求会一次性发送请求报文，POST请求通常分为两个TCP数据包，首先发 header 部分，如果服务器响应 100， 然后发 body 部分。 是什么限制了GET方法的URL长度 从HTTP协议规范层面说，规范没有对URL的长度进行限制，是浏览器、代理服务器的读取有限制；\nPOST方法真的不能被缓存吗 默认情况下，post不会被缓存，但是如果我们有中间代理服务器（Node），也是可以实现缓存的；\nHTTP 1.0 http1.0只支持POST/GET/HEAD命令 不支持断点续传，也就是说，每次都会传送全部的页面和数据。 只使用 header 中的Last-Modified、If-Modified-Since（协商缓存） 和 Expires（强缓存） 作为缓存失效的标准。 HTTP 1.1 引入了持久连接，即TCP连接默认不关闭，可以被多个请求复用，不用声明Connection: keep-alive； 引入了管道机制，即在同一个TCP连接里，客户端不用等待请求响应就可以发送多个请求，但要求服务端要按发送顺序返回； 支持断点续传，通过使用请求头中的 Range 来实现（206状态码）。 HTTP 1.1 中新增加了 E-tag、If-None-Match、Cache-Control 等缓存控制标头来控制缓存失效。 使用了虚拟网络，在一台物理服务器上可以存在多个虚拟主机，并且它们共享一个IP地址。 新增方法：PUT、 OPTIONS、 DELETE等。 更多的缓存标识：Cache-Control、ETag、If-None-Match 缺点：\n由于队头阻塞带来的高延迟 巨大的http头部 不支持服务器推送消息 HTTP 2.0 二进制分帧：在之前的 HTTP 版本中，我们是通过文本的方式传输数据。在 HTTP/2 中信息和数据体都是二进制，并且统称为\"帧\"：用头信息帧放头部字段，用数据帧放请求数据体，是一堆乱序的二进制帧，它们不存在先后关系，因此不需要排队等待，是HTTP2多路复用的基础。 头部压缩 HTTP2使用 HPACK算法 压缩头部然后再发送，并在两端维护了索引表，用于记录出现过的 header，后面在传输过程中就可以传输已经记录过的 header 的键名，对端收到数据后就可以通过键名找到对应的值。 多路复用 在一个连接里，可以同时发送多个请求或回应，且不用按顺序一一对应，这样子解决了HTTP队头阻塞的问题。 服务器推送允许浏览器发送一个请求后，服务器主动向浏览器推送与这个请求相关的资源，这样浏览器就不用发起后续请求去获取一些资源。但是Chrome106版本禁用了，改为103状态码； 服务器推送时，客户端的特点： 客户端可以缓存推送的资源 客户端可以拒收推送过来的资源 服务器可以按照优先级推送资源 HTTP 3.0 Google搞了一个基于 UDP 协议的 QUIC 协议，并且使用在了 HTTP/3 上\nHTTP3 出现原因 \u0026 HTTP2 缺点 底层协议还是TCP，仍然需要三次握手来确认连接成功， TCP的队头阻塞并没有彻底解决，在 HTTP2 中，多个请求是跑在一个TCP连接中的。但当HTTP/2出现丢包时，整个 TCP 都要开始等待重传，那么就会阻塞该TCP连接中的所有请求。 QUIC 实现了快速握手功能。由于QUIC是基于UDP的，不需要三次握手，这意味着QUIC可以用最快的速度来发送和接收数据。 3RTT =\u003e 0/1 RTT；根据是否要TLS加密 实现了类似TCP的可靠传输，虽然UDP不提供可靠性的传输，但QUIC在UDP的基础之上增加了一层来保证数据可靠性传输。 用的ACK模式，只是QUIC中包丢了就丢了，会重传一个新序号的包，通过包内的offset字段来确定这个包的位置； 集成了 TLS 加密功能，目前QUIC使用的是TLS1.3，相较于早期版本TLS1.3有更多的优点，其中最重要的一点是减少了握手所花费的RTT个数。 同样也提供了拥塞控制机制，包括慢启动、拥塞避免等； 也实现了多路复用，每个请求会在 quic 层面定义为一个 stream，丢包也只影响当前stream；彻底解决 TCP 中队头阻塞的问题（详细可阅读下文） 队头阻塞问题 队头阻塞是指当顺序发送的请求序列中的一个请求因为某种原因被阻塞时，在后面排队的所有请求也一并被阻塞\nTCP 队头阻塞 TCP是可靠传输协议，当前一个数据丢失时，后面到的数据将在接收端等待到前一个丢失的数据被发送端重传并到达接收端为止 这种机制保证了数据的有序正确，但也有可能造成 TCP队头阻塞； HTTP 队头阻塞 HTTP1.1 允许在持久连接上可选的使用请求管道 管道允许客户端在已发送请求后就发送下一个请求，不需要等待前一个请求响应，借此来减少等待时间； 但是客户端要求服务端按照请求发送的顺序返回响应，原因很简单：HTTP请求和响应并没有序列号标识，无法将乱序的响应与请求关联起来； 也就意味着如果一个响应返回延迟了，那么后续的响应都会延迟；这就造成了 HTTP队头阻塞； 解决方法 TCP队头阻塞问题是 TCP 自身的机制决定的，无法避免，所以 google 才推出 QUIC协议，也就是所谓的 HTTP3； HTTP2使用帧和流来传输数据，因为流的概念是虚拟的，所以HTTP2可以在一个TCP连接上用流同时发送多个帧，也就是所谓的多路复用：多个请求都复用一个连接来处理； 在流的层面上看，同个流的帧是严格有序的，而从连接的层面上看，传输的都是乱序的帧；多个请求、响应之间没有的顺序关系；也就不需要排队等待，避免了队头阻塞的问题； 简单来说：就是HTTP2通过帧、流、多路复用的方式，让请求和响应不用按顺序一一对应，解决队头阻塞的问题； 对于 HTTP1来说，可以使用 并发连接 和 域名分片 来一定程度上解决问题，chrome对单域名 限制并发6个TCP持久连接；而域名分片我们可以在一个域名下分出多个二级域名，而它们最终指向同一个服务器，这样可以并发的数量就更多； 总结 HTTP/1.1有两个主要的缺点：安全不足和性能不高。 HTTP/2完全兼容HTTP/1，头部压缩、多路复用等技术可以充分利用带宽，降低延迟，从而大幅度提高上网体验； QUIC 是 HTTP/3 中的底层支撑协议，该协议基于 UDP，又取了 TCP 中的精华，实现了即快又可靠的协议。 5.HTTPS 实际上， HTTPS 并不是一个新的协议，它只是在 HTTP 和 TCP 的传输中建立了一个安全层，它其实就是 HTTP + SSL/TLS 协议组合而成，而安全性的保证正是 SSL/TLS 所做的工作。\nHTTPS 的优缺点 优点\n使用 HTTPS 协议可认证用户和服务器，确保数据发送到正确的客户机和服务器 HTTPS 协议是可进行加密传输、身份认证的网络协议，要比 http 协议安全 HTTPS 是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本（除非用户主动信任了伪造证书） 缺点\n证书费用以及更新维护。 https 加密解密需要消耗更多服务器资源； https 握手阶段比较费时， HTTPS 和 HTTP 区别 HTTP 是明文传输，HTTPS 协议是可进行加密传输、身份认证的网络协议，比 HTTP 协议安全。 HTTPS对搜索引擎更友好，利于 SEO；谷歌、百度优先索引 HTTPS 网页。 HTTPS 标准端口 443，HTTP 标准端口 80。 HTTPS 需要用到SSL证书，而 HTTP 不用。 HTTPS 握手 握手过程 客户端发起 HTTPS 请求，发送客户端生成的随机数和支持的加密算法列表； 服务端返回证书、服务端生成的随机数、选择的加密方法给客户端； 客户端对证书进行合法性验证，验证通过后再生成一个随机数 客户端通过证书中的公钥对随机数进行加密传输到服务端，服务端接收后通过私钥解密得到随机数 三次握手此时已经完成，之后客户端和服务端都会根据这三个随机数，生成一个随机对称密钥，之后的数据都通过随机对称密钥进行加密传输。 客户端如何验证证书的合法性 首先浏览器读取证书中的证书所有者、有效期等信息进行一一校验。 浏览器接着判断证书中的颁发者CA是否受信任，用以校验证书是否为合法机构颁发； 如果证书不可信，浏览器就会提示证书不可信。 如果证书可信，那么浏览器就会用 CA机构 的公钥对证书里面的签名进行解密，得到hash值和加密算法。 再用证书里提到的加密算法，将证书的明文内容加密成另一个hash值，对比两个hash值是否相同；相同则证明服务器发来的证书合法，没有被篡改。 再比对一下证书中的域名和当前请求的域名是否一致，以确保证书不会被掉包。 此时浏览器就可以读取证书中的公钥，用于后续加密了。 为什么需要三个 随机数 因为随机数是伪随机的，三个伪随机数就十分随机了\n6.DNS DNS 的作用 DNS 的作用就是通过域名查询到具体的 IP。是应用层协议，通常该协议运行在UDP协议之上，使用的是53端口号。\nDNS 查询流程 以 Chrome 为例，当你在浏览器中想访问 www.google.com 时，会通过进行以下操作：\nChrome 先查看浏览器自身有没有该域名的 IP 缓存 Chrome 再查看操作系统有没有该域名的 IP 缓存 Chrome 再查看 Host 文件有没有该域名的解析配置 如果在hosts文件中也没有找到对应的条目，浏览器就会请求本地域名服务器localDNS（LDNS）来解析这个域名。（这是递归查询的流程）\n如果 LDNS 也没有该域名的记录，就会进行迭代查询： LDNS 先去 DNS根域名服务器查询，这一步查询会找出负责 com 这个一级域名的服务器 LDNS 再去该服务器查询 google.com 这个二级域名 LDNS 再去查询 www.google.com 这个三级域名的地址 LDNS 返回给浏览器，并缓存起来 递归查询 和 迭代查询 递归查询指的是查询请求发出后，域名服务器代为向下一级域名服务器发出请求，最后向用户返回查询的最终结果。使用递归查询，用户只需要发出一次查询请求。 迭代查询指的是查询请求后，域名服务器返回单次查询的结果。下一级的查询由用户自己请求。使用迭代查询，用户需要发出 多次的查询请求。 所以一般而言，本地DNS服务器查询是递归查询，而本地DNS服务器向其他域名服务器请求的过程是迭代查询的过程\n在客户端查找DNS缓存也就是递归查询；\n去查找服务端的就是迭代查询\nDNS 实现负载平衡 某些大型网站一般都会使用多台服务器提供服务，因此一个域名可能对应多个服务器地址； 当用户发起网站域名的 DNS 请求的时候，DNS 服务器返回这个域名所对应的服务器 IP 地址的集合 在每个响应中，会循环这些 IP 地址的顺序，用户一般会选择排在前面的地址发送请求。 以此将用户的请求均衡的分配到各个不同的服务器上，这样来实现负载均衡。 还有一种负载均衡的方式，使用反向代理，用户的请求都发送到反向代理服务上，然后由反向代理服务器来转发请求到真实的服务器上，以此来实现集群的负载平衡。\nDNS 为什么选择 UDP 协议作为传输层协议 为了得到一个域名的 IP 地址，往往会向多个域名服务器查询，而TCP协议存在三次握手，会造成DNS服务变得很慢\n7.计算机网络模型 OSI、TCP/IP、5层模型 各层基本作用 应用层：为应用程序提供网络服务； 表示层：数据格式化、加密、解密； 会话层：建立、维护、管理会话连接； 传输层：建立、维护、管理到端连接； 网络层：IP寻址和路由选择； 数据链路层：控制网络层与物理层之间通信； 物理层：通过光缆、无线电波等方式连接组网；传输比特流0和1； 网络层 IP寻址 和 路由 寻址就是根据IP地址找到具体的设备。 因为IPv4的网络是一个树状模型，顶层网络下方有多个子网，子网下方还有子网，最后才是设备；IP协议的寻址过程就是要逐级找到网络，最后定位设备； 路由就是选择数据传输的线路 在寻址过程中，数据总是存在于某个局域网中。如果目的地在局域网中，就可以直接定位到设备了；但是如果目的地不在局域网中，这个时候就需要再去往其它网络。 由于网络和网络之间是网关在链接，所以如果目的地IP不在局域网中，就要为IP封包选择通往下一个网络的路径，也就是选择其中一个网关； 当包去往下一个节点后，就进入了新的路由节点，然后就继续上述过程，直到最终定位到设备； 网络层就是通过IP寻址找到最终的设备，又要借助路由在每个节点选择数据传输的线路，所以路由和寻址是相辅相成的关系；\n8.WebSocket WebSocket 是 Html5 定义的一个新协议，出现的目的是即时通讯，替代轮询 与传统的 http 协议不同，它实现了浏览器与服务器全双工通信。 HTTP 与 WebSocket 相同点： 都是一样基于TCP的应用层协议，都是可靠性传输协议。 不同点： WebSocket 是全双工通信协议，通信双方可以实时且同时发送和接收消息。而HTTP是单向的； WebSocket 没有了 Request 和 Response 的概念 WebSocket 需要依赖 HTTP 协议进行一次握手。握手成功过后数据就直接从 TCP 通道传输，与 HTTP 无关； WebSocket 数据格式比较轻量，它的据包头部较小，而HTTP协议每次通信都需要携带完整的头部 WebSocket 无跨域问题 WebSocket 握手协议 与 Http握手 的区别 WebSocket 的握手协议相比 Http原本的握手协议 ，多了两个属性：\nUpgrade:webSocket Connection:Upgrade 客户端发送的握手协议，带有两个额外的属性，服务端就会返回101状态码，客户端收到101状态码后就成功\nWebSocket 心跳 可能会有某些未知情况导致 socket 断开，而客户端和服务端却不知道，需要客户端定时发送一个 心跳 ping 让服务端知道自己在线\n服务端也需要回答一个 心跳 pong 告诉客户端自己可用，否则视为断开。\nWebSocket 状态 WebSocket 对象中的 readyState 属性有四种状态：\n0：表示正在连接 1：表示连接成功，可以通信了 2：表示连接正在关闭 3：表示连接已经关闭，或者打开连接失败 Websocket 和 socket 的区别 Socket是应用层与TCP/IP协议通信的中间软件抽象层，它是一组接口。 而WebSocket则不同，它是一个完整的应用层协议，包含一套标准的API。 9.即时通信方案 即时通信方案，也就是指两个客户机能够同时的收发消息；\n方案选择 短轮询：前端用定时器每隔一段时间就ajax向后端获取更新； 长轮询：长轮询是短轮询的改进，请求到服务端后会被挂起，直到有新的消息才会返回响应；然后再重新发起请求； 基于流：基于流的推送技术就是指 SSE；SSE是一个H5的属性，它只能由服务器向浏览器发送数据，所以协作式通过 http 发送消息，sse 接受消息； Websocket：WebSocket 是 HTML5 开始提供的一种在单个 TCP 连接上进行全双工通信的协议；钉钉表格就是用的原生WebSocket； Socket.io：其实 Socket.IO 只是为了解决 websocket 的兼容性的一个解决方案，因为websocket出现的较新，所以一些老的浏览器兼容性不好，而 Socket.IO就是将websocket、长轮询两种通信方式封装成了统一的通信接口进行降级兼容； 单工、半双工和全双工通信 单工通信是指消息只能单方向传输的工作方式，数据信息从一端到另一端是单方向的。例：广播。\n半双工通信可以实现双向的通信，但是不能在两个方向同时进行，必须交替进行。这中模式下，接收端和发送端可以互相转换。例：对讲机。\n全双工通信是指在通信的任意时刻，都允许数据同时在两个方向上传输，在这个模式下，通信系统的每一端都设置了发送器和接收器\n",
+  "wordCount" : "11807",
+  "inLanguage": "en",
+  "datePublished": "2023-11-25T00:29:00+08:00",
+  "dateModified": "2023-11-25T00:29:00+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Yu"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yurooc.github.io/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "YuBlog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yurooc.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://yurooc.github.io" accesskey="h" title="YuBlog (Alt + H)">YuBlog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://yurooc.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://yurooc.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://yurooc.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://yurooc.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/yurooc" title="GitHub">
+                    <span>GitHub</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://yurooc.github.io">Home</a>&nbsp;»&nbsp;<a href="https://yurooc.github.io/blog/">Blogs</a></div>
+    <h1 class="post-title">
+      计算机网络面经
+    </h1>
+    <div class="post-description">
+      计算机网络面经
+    </div>
+    <div class="post-meta"><span title='2023-11-25 00:29:00 +0800 CST'>November 25, 2023</span>&nbsp;·&nbsp;24 min&nbsp;·&nbsp;11807 words&nbsp;·&nbsp;Yu
+
+
+      <div  class="meta-item">&nbsp·&nbsp
+      <span id="busuanzi_container_page_pv">本文阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+    </div>
+    </div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c%e7%af%87" aria-label="计算机网络篇">计算机网络篇</a><ul>
+                            <ul>
+                            
+                    <li>
+                        <a href="#1http%e5%b8%b8%e8%a7%81%e7%8a%b6%e6%80%81%e7%a0%81" aria-label="1.HTTP常见状态码">1.HTTP常见状态码</a><ul>
+                            
+                    <li>
+                        <a href="#%e8%af%a6%e7%bb%86%e8%af%b4%e8%af%b4-103-%e7%8a%b6%e6%80%81%e7%a0%81-early-hints" aria-label="详细说说 103 状态码 (Early Hints)">详细说说 103 状态码 (<code>Early Hints</code>)</a></li>
+                    <li>
+                        <a href="#103-%e7%8a%b6%e6%80%81%e7%a0%81%e5%92%8c-http2%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%8e%a8%e9%80%81-%e7%9a%84%e5%8c%ba%e5%88%ab" aria-label="103 状态码和 HTTP2服务器推送 的区别">103 状态码和 HTTP2服务器推送 的区别</a></li>
+                    <li>
+                        <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81-302-307-308-%e7%8a%b6%e6%80%81%e7%a0%81" aria-label="为什么需要 302 307 308 状态码">为什么需要 302 307 308 状态码</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#2%e4%bb%8e%e8%be%93%e5%85%a5url%e5%88%b0%e5%91%88%e7%8e%b0%e9%a1%b5%e9%9d%a2%e8%bf%87%e7%a8%8b" aria-label="2.从输入URL到呈现页面过程">2.从输入URL到呈现页面过程</a></li>
+                    <li>
+                        <a href="#3tcpudp" aria-label="3.TCP、UDP">3.TCP、UDP</a><ul>
+                            
+                    <li>
+                        <a href="#tcpudp-%e7%9a%84%e7%89%b9%e7%82%b9" aria-label="TCP、UDP 的特点">TCP、UDP 的特点</a></li>
+                    <li>
+                        <a href="#tcp-%e5%92%8c-udp-%e7%9a%84%e5%8c%ba%e5%88%ab" aria-label="TCP 和 UDP 的区别">TCP 和 UDP 的区别</a></li>
+                    <li>
+                        <a href="#http-%e5%92%8c-tcp-%e7%9a%84%e4%b8%8d%e5%90%8c" aria-label="HTTP 和 TCP 的不同">HTTP 和 TCP 的不同</a></li>
+                    <li>
+                        <a href="#tcp-%e7%9a%84%e5%8f%af%e9%9d%a0%e6%80%a7" aria-label="TCP 的可靠性">TCP 的可靠性</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6-%e5%92%8c-%e6%8b%a5%e5%a1%9e%e6%8e%a7%e5%88%b6-%e7%9a%84%e5%8c%ba%e5%88%ab" aria-label="流量控制 和 拥塞控制 的区别">流量控制 和 拥塞控制 的区别</a></li>
+                    <li>
+                        <a href="#%e6%b5%81%e9%87%8f%e6%8e%a7%e5%88%b6%e6%9c%ba%e5%88%b6--%e6%bb%91%e5%8a%a8%e7%aa%97%e5%8f%a3" aria-label="流量控制机制 &amp;amp; 滑动窗口">流量控制机制 &amp; 滑动窗口</a></li>
+                    <li>
+                        <a href="#%e6%8b%a5%e5%a1%9e%e6%8e%a7%e5%88%b6%e6%9c%ba%e5%88%b6" aria-label="拥塞控制机制">拥塞控制机制</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e4%b8%89%e6%ac%a1%e6%8f%a1%e6%89%8b" aria-label="三次握手">三次握手</a><ul>
+                            
+                    <li>
+                        <a href="#tcp-%e4%b8%89%e6%ac%a1%e6%8f%a1%e6%89%8b%e6%b5%81%e7%a8%8b" aria-label="TCP 三次握手流程">TCP 三次握手流程</a></li>
+                    <li>
+                        <a href="#tcp-%e5%bf%ab%e9%80%9f%e6%89%93%e5%bc%80tfo" aria-label="TCP 快速打开（TFO）">TCP 快速打开（TFO）</a></li>
+                    <li>
+                        <a href="#%e4%b8%89%e6%ac%a1%e6%8f%a1%e6%89%8b%e7%9a%84%e6%84%8f%e4%b9%89" aria-label="三次握手的意义">三次握手的意义</a></li>
+                    <li>
+                        <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88-tcp-%e5%bb%ba%e7%ab%8b%e8%bf%9e%e6%8e%a5%e9%9c%80%e8%a6%81%e4%b8%89%e6%ac%a1%e6%8f%a1%e6%89%8b%e8%80%8c%e4%b8%8d%e6%98%af%e4%b8%a4%e6%ac%a1" aria-label="为什么 TCP 建立连接需要三次握手，而不是两次">为什么 TCP 建立连接需要三次握手，而不是两次</a></li>
+                    <li>
+                        <a href="#%e4%b8%89%e6%ac%a1%e6%8f%a1%e6%89%8b%e8%bf%87%e7%a8%8b%e4%b8%ad%e5%8f%af%e4%bb%a5%e6%90%ba%e5%b8%a6%e6%95%b0%e6%8d%ae%e5%90%97" aria-label="三次握手过程中可以携带数据吗">三次握手过程中可以携带数据吗</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e5%9b%9b%e6%ac%a1%e6%8c%a5%e6%89%8b" aria-label="四次挥手">四次挥手</a><ul>
+                            
+                    <li>
+                        <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e5%9b%9b%e6%ac%a1%e6%8c%a5%e6%89%8b--%e5%9b%9b%e6%ac%a1%e6%8c%a5%e6%89%8b%e6%b5%81%e7%a8%8b" aria-label="为什么要四次挥手 &amp;amp; 四次挥手流程">为什么要四次挥手 &amp; 四次挥手流程</a></li>
+                    <li>
+                        <a href="#%e5%9b%9b%e6%ac%a1%e6%8c%a5%e6%89%8b%e7%bb%93%e6%9d%9f%e7%ad%89%e5%be%85-2msl-%e7%9a%84%e6%84%8f%e4%b9%89" aria-label="四次挥手结束等待 2MSL 的意义">四次挥手结束等待 2MSL 的意义</a></li></ul>
+                    </li></ul>
+                    </li>
+                    <li>
+                        <a href="#4http" aria-label="4.HTTP">4.HTTP</a><ul>
+                            
+                    <li>
+                        <a href="#http-%e7%9a%84%e7%89%b9%e7%82%b9" aria-label="HTTP 的特点">HTTP 的特点</a></li>
+                    <li>
+                        <a href="#http-%e6%8a%a5%e6%96%87%e7%bb%84%e6%88%90" aria-label="HTTP 报文组成">HTTP 报文组成</a></li>
+                    <li>
+                        <a href="#http-%e7%9a%84%e8%af%b7%e6%b1%82%e6%96%b9%e6%b3%95" aria-label="HTTP 的请求方法">HTTP 的请求方法</a><ul>
+                            
+                    <li>
+                        <a href="#get-%e5%92%8c-post%e7%9a%84%e5%8c%ba%e5%88%ab" aria-label="GET 和 POST的区别">GET 和 POST的区别</a></li>
+                    <li>
+                        <a href="#%e6%98%af%e4%bb%80%e4%b9%88%e9%99%90%e5%88%b6%e4%ba%86get%e6%96%b9%e6%b3%95%e7%9a%84url%e9%95%bf%e5%ba%a6" aria-label="是什么限制了GET方法的URL长度">是什么限制了GET方法的URL长度</a></li>
+                    <li>
+                        <a href="#post%e6%96%b9%e6%b3%95%e7%9c%9f%e7%9a%84%e4%b8%8d%e8%83%bd%e8%a2%ab%e7%bc%93%e5%ad%98%e5%90%97" aria-label="POST方法真的不能被缓存吗">POST方法真的不能被缓存吗</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#http-10" aria-label="HTTP 1.0">HTTP 1.0</a></li>
+                    <li>
+                        <a href="#http-11" aria-label="HTTP 1.1">HTTP 1.1</a></li>
+                    <li>
+                        <a href="#http-20" aria-label="HTTP 2.0">HTTP 2.0</a></li>
+                    <li>
+                        <a href="#http-30" aria-label="HTTP 3.0">HTTP 3.0</a><ul>
+                            
+                    <li>
+                        <a href="#http3-%e5%87%ba%e7%8e%b0%e5%8e%9f%e5%9b%a0--http2-%e7%bc%ba%e7%82%b9" aria-label="HTTP3 出现原因 &amp;amp; HTTP2 缺点">HTTP3 出现原因 &amp; HTTP2 缺点</a></li>
+                    <li>
+                        <a href="#quic" aria-label="QUIC">QUIC</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e9%98%9f%e5%a4%b4%e9%98%bb%e5%a1%9e%e9%97%ae%e9%a2%98" aria-label="队头阻塞问题">队头阻塞问题</a><ul>
+                            
+                    <li>
+                        <a href="#tcp-%e9%98%9f%e5%a4%b4%e9%98%bb%e5%a1%9e" aria-label="TCP 队头阻塞">TCP 队头阻塞</a></li>
+                    <li>
+                        <a href="#http-%e9%98%9f%e5%a4%b4%e9%98%bb%e5%a1%9e" aria-label="HTTP 队头阻塞">HTTP 队头阻塞</a></li>
+                    <li>
+                        <a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95" aria-label="解决方法">解决方法</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#%e6%80%bb%e7%bb%93" aria-label="总结">总结</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#5https" aria-label="5.HTTPS">5.HTTPS</a><ul>
+                            
+                    <li>
+                        <a href="#https-%e7%9a%84%e4%bc%98%e7%bc%ba%e7%82%b9" aria-label="HTTPS 的优缺点">HTTPS 的优缺点</a></li>
+                    <li>
+                        <a href="#https-%e5%92%8c-http-%e5%8c%ba%e5%88%ab" aria-label="HTTPS 和 HTTP 区别">HTTPS 和 HTTP 区别</a></li>
+                    <li>
+                        <a href="#https-%e6%8f%a1%e6%89%8b" aria-label="HTTPS 握手">HTTPS 握手</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%8f%a1%e6%89%8b%e8%bf%87%e7%a8%8b" aria-label="握手过程">握手过程</a></li>
+                    <li>
+                        <a href="#%e5%ae%a2%e6%88%b7%e7%ab%af%e5%a6%82%e4%bd%95%e9%aa%8c%e8%af%81%e8%af%81%e4%b9%a6%e7%9a%84%e5%90%88%e6%b3%95%e6%80%a7" aria-label="客户端如何验证证书的合法性">客户端如何验证证书的合法性</a></li>
+                    <li>
+                        <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e4%b8%89%e4%b8%aa-%e9%9a%8f%e6%9c%ba%e6%95%b0" aria-label="为什么需要三个 随机数">为什么需要三个 随机数</a></li></ul>
+                    </li></ul>
+                    </li>
+                    <li>
+                        <a href="#6dns" aria-label="6.DNS">6.DNS</a><ul>
+                            
+                    <li>
+                        <a href="#dns-%e7%9a%84%e4%bd%9c%e7%94%a8" aria-label="DNS 的作用">DNS 的作用</a></li>
+                    <li>
+                        <a href="#dns-%e6%9f%a5%e8%af%a2%e6%b5%81%e7%a8%8b" aria-label="DNS 查询流程">DNS 查询流程</a></li>
+                    <li>
+                        <a href="#%e9%80%92%e5%bd%92%e6%9f%a5%e8%af%a2-%e5%92%8c-%e8%bf%ad%e4%bb%a3%e6%9f%a5%e8%af%a2" aria-label="递归查询 和 迭代查询">递归查询 和 迭代查询</a></li>
+                    <li>
+                        <a href="#dns-%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%b9%b3%e8%a1%a1" aria-label="DNS 实现负载平衡">DNS 实现负载平衡</a></li>
+                    <li>
+                        <a href="#dns-%e4%b8%ba%e4%bb%80%e4%b9%88%e9%80%89%e6%8b%a9-udp-%e5%8d%8f%e8%ae%ae%e4%bd%9c%e4%b8%ba%e4%bc%a0%e8%be%93%e5%b1%82%e5%8d%8f%e8%ae%ae" aria-label="DNS 为什么选择 UDP 协议作为传输层协议">DNS 为什么选择 UDP 协议作为传输层协议</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#7%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c%e6%a8%a1%e5%9e%8b" aria-label="7.计算机网络模型">7.计算机网络模型</a><ul>
+                            
+                    <li>
+                        <a href="#ositcpip5%e5%b1%82%e6%a8%a1%e5%9e%8b" aria-label="OSI、TCP/IP、5层模型">OSI、TCP/IP、5层模型</a></li>
+                    <li>
+                        <a href="#%e5%90%84%e5%b1%82%e5%9f%ba%e6%9c%ac%e4%bd%9c%e7%94%a8" aria-label="各层基本作用">各层基本作用</a></li>
+                    <li>
+                        <a href="#%e7%bd%91%e7%bb%9c%e5%b1%82-ip%e5%af%bb%e5%9d%80-%e5%92%8c-%e8%b7%af%e7%94%b1" aria-label="网络层 IP寻址 和 路由">网络层 IP寻址 和 路由</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#8websocket" aria-label="8.WebSocket">8.WebSocket</a><ul>
+                            
+                    <li>
+                        <a href="#http-%e4%b8%8e-websocket" aria-label="HTTP 与 WebSocket">HTTP 与 WebSocket</a></li>
+                    <li>
+                        <a href="#websocket-%e6%8f%a1%e6%89%8b%e5%8d%8f%e8%ae%ae-%e4%b8%8e-http%e6%8f%a1%e6%89%8b-%e7%9a%84%e5%8c%ba%e5%88%ab" aria-label="WebSocket 握手协议 与 Http握手 的区别">WebSocket 握手协议 与 Http握手 的区别</a></li>
+                    <li>
+                        <a href="#websocket-%e5%bf%83%e8%b7%b3" aria-label="WebSocket 心跳">WebSocket 心跳</a></li>
+                    <li>
+                        <a href="#websocket-%e7%8a%b6%e6%80%81" aria-label="WebSocket 状态">WebSocket 状态</a></li>
+                    <li>
+                        <a href="#websocket-%e5%92%8c-socket-%e7%9a%84%e5%8c%ba%e5%88%ab" aria-label="Websocket 和 socket 的区别">Websocket 和 socket 的区别</a></li></ul>
+                    </li>
+                    <li>
+                        <a href="#9%e5%8d%b3%e6%97%b6%e9%80%9a%e4%bf%a1%e6%96%b9%e6%a1%88" aria-label="9.即时通信方案">9.即时通信方案</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%96%b9%e6%a1%88%e9%80%89%e6%8b%a9" aria-label="方案选择">方案选择</a></li>
+                    <li>
+                        <a href="#%e5%8d%95%e5%b7%a5%e5%8d%8a%e5%8f%8c%e5%b7%a5%e5%92%8c%e5%85%a8%e5%8f%8c%e5%b7%a5%e9%80%9a%e4%bf%a1" aria-label="单工、半双工和全双工通信">单工、半双工和全双工通信</a>
+                    </li>
+                </ul>
+                </ul>
+                </li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+  <div class="post-content"><h2 id="计算机网络篇">计算机网络篇<a hidden class="anchor" aria-hidden="true" href="#计算机网络篇">#</a></h2>
+<h4 id="1http常见状态码">1.HTTP常见状态码<a hidden class="anchor" aria-hidden="true" href="#1http常见状态码">#</a></h4>
+<ul>
+<li>
+<p><code>1xx</code>: 接受，继续处理</p>
+</li>
+<li>
+<p><code>101</code>：在<code>HTTP</code>升级为<code>WebSocket</code>的时候，如果服务器同意变更，就会发送状态码 <code>101</code>。</p>
+</li>
+<li>
+<p><code>103</code>（<code>Early Hints</code>）：客户端应在服务端返回<code>HTML</code>前开始预加载资源</p>
+</li>
+<li>
+<p><code>200</code>: 成功，并返回数据</p>
+</li>
+<li>
+<p><code>201</code>: 已创建</p>
+</li>
+<li>
+<p><code>202</code>: 已接受</p>
+</li>
+<li>
+<p><code>203</code>: 成功，但未授权</p>
+</li>
+<li>
+<p><code>204</code>: 成功，无内容</p>
+</li>
+<li>
+<p><code>205</code>: 成功，重置内容</p>
+</li>
+<li>
+<p><code>206</code>: 成功，部分内容，用来实现断点续传</p>
+</li>
+<li>
+<p><code>301</code>: 永久重定向。场景是使用域名跳转，新的<code>URL</code>在响应中给出</p>
+</li>
+<li>
+<p><code>302</code>: 临时重定向。场景是未登陆的用户跳转登录；<code>浏览器</code>默认使用<code>get</code>方式重新发出请求，会导致第一次以<code>post</code>请求的参数丢失；（才衍生出了<code>307</code>状态码）</p>
+</li>
+<li>
+<p><code>303</code>: 临时重定向，强制浏览器将请求方法从<code>POST</code>改到<code>GET</code>；</p>
+</li>
+<li>
+<p><code>304</code>: 资源未修改，可使用缓存（协商缓存）</p>
+</li>
+<li>
+<p><code>305</code>: 需代理访问</p>
+</li>
+<li>
+<p><code>307</code>: <code>307</code> 和 <code>302</code> 一样是临时重定向，唯一的区别在于，<code>307</code> 状态码不允许浏览器将原本为 <code>POST</code> 的请求重定向到 <code>GET</code> 请求上。</p>
+</li>
+<li>
+<p><code>308</code>: <code>308</code> 和 <code>301</code> 一样是永久重定向，唯一的区别在于，<code>308</code> 状态码不允许浏览器将原本为 <code>POST</code> 的请求重定向到 <code>GET</code> 请求上。</p>
+</li>
+<li>
+<p><code>400</code>: 请求语法错误</p>
+</li>
+<li>
+<p><code>401</code>: 要求身份认证</p>
+</li>
+<li>
+<p><code>403</code>: 拒绝请求</p>
+</li>
+<li>
+<p><code>404</code>: 资源不存在</p>
+</li>
+<li>
+<p><code>405</code>: 请求方法不允许</p>
+</li>
+<li>
+<p><code>500</code>: 服务器错误</p>
+</li>
+<li>
+<p><code>502</code>: 网关错误：服务器作为网关或代理出现错误</p>
+</li>
+<li>
+<p><code>503</code>: 服务不可用：服务器目前无法使用</p>
+</li>
+<li>
+<p><code>504</code>: 网关超时：网关或代理服务器，未及时获取请求</p>
+</li>
+</ul>
+<h5 id="详细说说-103-状态码-early-hints">详细说说 103 状态码 (<code>Early Hints</code>)<a hidden class="anchor" aria-hidden="true" href="#详细说说-103-状态码-early-hints">#</a></h5>
+<blockquote>
+<p><code>2022</code>年 <code>6</code>月<code>Chrome 官方</code>宣布在 <code>chrome 103</code> 版本对 <code>HTTP 103</code> 状态码提供了支持；</p>
+<p><code>Chrome 官方</code>也宣布在 <code>chrome 106 </code>版本对 <code>HTTP/2 Server Push</code>进行禁用；</p>
+</blockquote>
+<ul>
+<li>正常情况下，我们需要等待 <code>HTML</code> 页面的返回后，才可以知道下一步需要去加载哪些 <code>JS</code>、<code>CSS</code>文件，这中间有一段的等待时间就被浪费掉了；这尤其在<code>SSR</code>项目中尤为明显；</li>
+<li><code>HTTP 103</code> 状态码可以返回一个初步的 <code>HTTP</code> 响应，浏览器可以使用这些提示来<code>预连接</code>，并在等待资源响应的同时请求子资源。</li>
+<li>它在 <code>SSR</code> 项目里面会非常有用；在<code>SPA</code>项目里面，大部分的逻辑都在客户端，<code>HTML</code> 很小，这时候我们只需要用常规的<code>preload</code>、<code>preconnect</code>之类的手段就可以了；</li>
+</ul>
+<h5 id="103-状态码和-http2服务器推送-的区别">103 状态码和 HTTP2服务器推送 的区别<a hidden class="anchor" aria-hidden="true" href="#103-状态码和-http2服务器推送-的区别">#</a></h5>
+<blockquote>
+<p>使用<code>HTTP2服务器推送</code>时，很多资源其实浏览器第一次请求就已经缓存下来了，但是<code>服务端推送</code>仍然会推送已缓存的资源，会导致网络带宽浪费；这是它的一个缺点，所以使用的人也较少；</p>
+</blockquote>
+<ul>
+<li><code>HTTP2</code>服务器推送是直接发送资源，而<code>103</code>状态码只是向浏览器发送资源提示，浏览器可以控制是否需要这些资源，因为相同的资源可能已经在浏览器缓存过了；</li>
+<li>总的来说，<code>HTTP103 Early Hints</code> 它能够解决<code>网络带宽浪费</code>的问题，可以说是 <code>HTTP/2 Server Push</code> 的升级版。不过目前还没有完全覆盖服务器推送的所有用例；</li>
+</ul>
+<h5 id="为什么需要-302-307-308-状态码">为什么需要 302 307 308 状态码<a hidden class="anchor" aria-hidden="true" href="#为什么需要-302-307-308-状态码">#</a></h5>
+<ul>
+<li><code>301</code>: 永久重定向。场景是使用域名跳转，新的<code>URL</code>在响应中给出</li>
+<li><code>302</code>: 临时重定向。场景是未登陆的用户跳转登录；<code>浏览器</code>默认使用<code>get</code>方式重新发出请求，会导致第一次以<code>post</code>请求的参数丢失；（才衍生出了<code>307</code>状态码）</li>
+<li><code>303</code>: 临时重定向，强制浏览器将请求方法从<code>POST</code>改到<code>GET</code>；</li>
+<li><code>307</code>: <code>307</code> 和 <code>302</code> 一样是临时重定向，唯一的区别在于，<code>307</code> 状态码不允许浏览器将原本为 <code>POST</code> 的请求重定向到 <code>GET</code> 请求上。</li>
+<li><code>308</code>: <code>308</code> 和 <code>301</code> 一样是永久重定向，唯一的区别在于，<code>308</code> 状态码不允许浏览器将原本为 <code>POST</code> 的请求重定向到 <code>GET</code> 请求上。</li>
+</ul>
+<h4 id="2从输入url到呈现页面过程">2.从输入URL到呈现页面过程<a hidden class="anchor" aria-hidden="true" href="#2从输入url到呈现页面过程">#</a></h4>
+<blockquote>
+<p>这个流程可以分为两部分来说，第一部分是浏览器请求响应的过程；</p>
+</blockquote>
+<ul>
+<li>输入<code>URL</code>：用户在地址栏按下回车，先检查输入的是<code>搜索关键字</code>还是符合<code>url</code>的规则，然后将其组装成完整 <code>URL</code>进行访问；</li>
+<li>检查缓存：然后会先检查本地<code>强缓存</code>是否可用，如果可用就直接从缓存中返回资源；</li>
+<li>DNS解析：如果强缓存不可用，就会进行DNS解析，通过递归查询和迭代查询解析域名来得到域名对应的IP地址；
+<ul>
+<li><code>DNS</code>查询的顺序为：浏览器<code>IP</code>缓存，操作系统<code>IP</code>缓存，<code>Hosts</code>文件，<code>DNS</code>根服务器；</li>
+</ul>
+</li>
+<li>建立<code>TCP</code>连接：得到<code>IP</code>地址后，会进行三次握手去建立<code>TCP</code>连接；</li>
+<li>发送<code>HTTP</code>请求：建立<code>TCP</code>连接后发送 <code>HTTP</code> 请求，发送<code>HTTP</code>请求时会携带上<code>cookie</code>和<code>缓存</code>的标识字段；</li>
+<li>负载均衡：服务端网关收到<code>HTTP</code>请求后，<code>可能</code>会有一系列的<code>负载均衡</code>处理，通过<code>反向代理</code>分配给对应集群中的服务器去执行；</li>
+<li>服务器返回响应：服务器收到请求后，先根据请求头的<code>缓存标识</code>来判断<code>缓存</code>是否生效，生效就返回<code>304</code>状态码；不生效就返回资源和<code>200</code>状态码（在返回<code>200</code>的响应报文前，还可能会返回<code>103</code>的响应报文）；</li>
+<li>浏览器接收<code>HTTP</code>响应：浏览器接受到<code>HTTP</code>响应后根据 <code>connection:keep-alive</code> 的值来选择通过 <code>四次挥手</code>来断开<code>TCP</code>连接，或者保留；</li>
+<li>同时浏览器还会<code>缓存</code>响应头里的<code>缓存标识字段</code>；</li>
+</ul>
+<blockquote>
+<p>到此为止，浏览器请求响应的过程就结束了；第二部分就是浏览器解析并渲染的过程；</p>
+</blockquote>
+<ul>
+<li>构建<code>DOM</code>树：浏览器<code>从上到下</code>解析 <code>HTML</code> 文档生成<code>DOM</code>节点树；</li>
+<li>构建<code>CSSOM</code>树：浏览器解析遇到<code>样式</code>时，会进行<code>异步下载</code>，下载完成后构建 <code>CSSOM</code>树；</li>
+<li>值得一提的是，当遇到不带async和defer的script时，会阻止解析HTML并进行下载和执行；
+<ul>
+<li>并且<code>CSS</code>和<code>DOM</code>渲染，<code>JS</code>和<code>DOM</code>解析之间是有<code>阻塞关系</code>的；</li>
+</ul>
+</li>
+<li>构建渲染树：根据<code>DOM</code>节点树和<code>CSSOM</code>树构建渲染树（<code>Render</code>）；</li>
+<li>布局（<code>Layout</code>）：根据渲染树将<code>DOM</code>节点树每一个节点布局在屏幕上的正确位置；</li>
+<li>绘制（Paint）：绘制所有节点，为每一个节点适用对应的样式，绘制到屏幕上；
+<ul>
+<li>绘制的过程中还有很多细节，包括说：</li>
+<li>构建图层树：需要对<code>布局树</code>进行分层，生成<code>图层树</code>（比如说Z轴排序）</li>
+<li>生成绘制列表：将<code>图层</code>的绘制拆分为很多的<code>绘制指令</code>，并按<code>顺序</code>组成<code>绘制列表</code>，并提交到<code>合成线程</code>中；</li>
+<li>光栅化（栅格化）生成位图：合成线程将图层划分成图块，并在光栅化线程池中将图块转换成位图。
+<ul>
+<li>同时因为用户只能看到<code>视口</code>的这一部分，所以<code>合成线程</code>就会按照<code>视口</code>附近的<code>图块</code>来优先生成<code>位图</code>，</li>
+</ul>
+</li>
+<li>显示：一旦所有的图块都被光栅化，合成线程就会提交绘图指令给浏览器进程；浏览器进程生成页面并显示到屏幕上；</li>
+</ul>
+</li>
+</ul>
+<h4 id="3tcpudp">3.TCP、UDP<a hidden class="anchor" aria-hidden="true" href="#3tcpudp">#</a></h4>
+<h5 id="tcpudp-的特点">TCP、UDP 的特点<a hidden class="anchor" aria-hidden="true" href="#tcpudp-的特点">#</a></h5>
+<ul>
+<li><code>TCP</code>是一个面向连接的<code>传输层</code>协议。是可靠的、基于字节流的；<code>TCP</code>还具有<code>超时重传</code>、<code>拥塞控制</code>的机制；</li>
+<li>而<code>UDP</code>是一个无连接的<code>传输层</code>协议。</li>
+</ul>
+<p>面向连接指的是需要三次握手建立链接</p>
+<p>可靠性指 <code>TCP</code> 具有 确认应答<code>ACK</code> 和 <code>序列号</code>来实现可靠传输；</p>
+<p>基于字节流指的是：<code>UDP</code>的传输是将一个完整的用户消息发送一个<code>UDP</code>报文；而<code>TCP</code>是将一条用户消息根据滑动窗口的字节大小，拆分成多个<code>TCP</code>报文段（<code>TCP将数据看作一连串字节流</code>）</p>
+<h5 id="tcp-和-udp-的区别">TCP 和 UDP 的区别<a hidden class="anchor" aria-hidden="true" href="#tcp-和-udp-的区别">#</a></h5>
+<ul>
+<li><code>TCP</code> 是面向连接的，<code>UDP</code> 是无连接的即发送数据前不需要先建立链接</li>
+<li><code>TCP</code> 是可靠传输，保证数据正确且有序；<code>UDP</code>是不可靠的，可能丢包或乱序</li>
+<li><code>TCP</code> 是面向字节流，<code>UDP</code> 面向报文，并且网络出现拥塞不会使得发送速率降低</li>
+<li><code>TCP</code> 首部开销大，最小<code>20</code>字节最大<code>60</code>字节，而 <code>UDP</code> 首部开销小，仅<code>8</code>字节</li>
+<li><code>TCP</code> 只能是 <code>1 对 1</code> 的，<code>UDP</code> 支持 <code>1 对 1</code>,<code>1 对多</code>；</li>
+</ul>
+<h5 id="http-和-tcp-的不同">HTTP 和 TCP 的不同<a hidden class="anchor" aria-hidden="true" href="#http-和-tcp-的不同">#</a></h5>
+<ul>
+<li><code>HTTP</code>的责任是去定义数据，在两台计算机相互传递信息时，<code>HTTP</code>规定了每段数据以什么形式表达才是能够被另外一台计算机理解。</li>
+<li>而<code>TCP</code>所要规定的是数据应该怎么传输才能稳定且高效</li>
+</ul>
+<h5 id="tcp-的可靠性">TCP 的可靠性<a hidden class="anchor" aria-hidden="true" href="#tcp-的可靠性">#</a></h5>
+<ul>
+<li>序列号：<code>TCP</code>给每一个包一个序号，保证接收端的按序接受；</li>
+<li>确认应答ACK：接收端收到包就会回一个相应的确认ACK，如果发送端在一个往返时延内未收到确认就会重传；</li>
+<li>流量控制：通过控制发送者的发送速度来缓解接收者的拥塞；</li>
+<li>拥塞控制：当网络出现拥塞的时候，<code>TCP</code>能够减小向网络注入数据的速率和数量，缓解拥塞；</li>
+</ul>
+<h6 id="流量控制-和-拥塞控制-的区别">流量控制 和 拥塞控制 的区别<a hidden class="anchor" aria-hidden="true" href="#流量控制-和-拥塞控制-的区别">#</a></h6>
+<ul>
+<li><code>流量控制</code> 是作用于接收者的，它是控制发送者的发送速度从而使接收者来得及接收，防止丢失数据包的。</li>
+<li><code>拥塞控制</code> 是作用于网络的，它是防止过多的数据注入到网络中，避免出现网络负载过大的情况</li>
+</ul>
+<h6 id="流量控制机制--滑动窗口">流量控制机制 &amp; 滑动窗口<a hidden class="anchor" aria-hidden="true" href="#流量控制机制--滑动窗口">#</a></h6>
+<ul>
+<li>对于发送端和接收端来说，<code>TCP</code>需要将发送的数据放到发送缓冲区，接收的数据放到接收缓冲区；</li>
+<li>而流量控制的目的，就是为了提供一种机制：让发送端可以根据接收端的实际接受能力控制发送的数据量；</li>
+<li><code>TCP</code>通过滑动窗口实现流量控制的机制，而滑动窗口大小是通过<code>TCP</code>首部的窗口大小字段来通知对方；</li>
+<li><code>TCP</code>协议的头部信息中，有一个<code>16</code>位字段的窗口大小，窗口大小的内容就是接收端接收数据缓冲区的剩余大小；当接收端缓冲区面临溢出时，就会设置成一个更小值取告诉发送端要控制发送的数据量；发送端收到后就会对数据发送量进行调整，形成完整的流量控制；</li>
+</ul>
+<h6 id="拥塞控制机制">拥塞控制机制<a hidden class="anchor" aria-hidden="true" href="#拥塞控制机制">#</a></h6>
+<p>体现在四个方面</p>
+<ul>
+<li><code>慢启动</code>：开始的时候不要发送大量数据，先测试一下网络，然后慢慢由小到大的增加拥塞窗口大小；直到达到慢启动阈值；</li>
+<li><code>拥塞避免</code>：一旦判断网络出现拥塞，就将慢启动阈值设置为出现拥塞时一半的大小，并把拥塞窗口设为1，再重新开始慢启动算法</li>
+<li><code>快速重传</code>：就是接收方在收到一个失序的报文后立即发出重复确认，快重传算法规定发送方只要连续收到三个重复确认就立即重传对方尚未收到的报文段，而不用继续等重传计时器到期；</li>
+<li><code>快速恢复</code>：当发送方连续收到三个重复确认时，就不执行慢启动算法而是执行拥塞避免算法；</li>
+</ul>
+<p>拥塞窗口 是指发送端还可以传输的数据量大小，上文提到有通过流量控制机制来限制发送窗口的大小，而最终会取两者之间的较小值；</p>
+<h5 id="三次握手">三次握手<a hidden class="anchor" aria-hidden="true" href="#三次握手">#</a></h5>
+<h6 id="tcp-三次握手流程">TCP 三次握手流程<a hidden class="anchor" aria-hidden="true" href="#tcp-三次握手流程">#</a></h6>
+<ul>
+<li>第一步：客户端发送<code>SYN</code>报文到服务端发起握手</li>
+<li>第二步：服务端收到<code>SYN</code>报文之后回复<code>SYN</code>和<code>ACK</code>报文给客户端</li>
+<li>第三步：客户端收到<code>SYN</code>和<code>ACK</code>，向服务端发送一个<code>ACK</code>报文</li>
+</ul>
+<h6 id="tcp-快速打开tfo">TCP 快速打开（TFO）<a hidden class="anchor" aria-hidden="true" href="#tcp-快速打开tfo">#</a></h6>
+<p><code>TFO </code>就是为了减少三次握手带来的延时，</p>
+<ul>
+<li>在 <code>TFO</code> 的流程中，首轮三次握手服务端会计算得到一个 <code>TFO cookie</code>，放到 <code>TCP</code> 报文的 <code>Fast Open</code>里面</li>
+<li>客户端拿到这个 <code>cookie</code> 后缓存下来，并完成正常的三次握手；</li>
+<li>下一次的三次握手，客户端就会将之前的 <code>cookie</code> 和 <code>HTTP请求</code>、<code>SYN</code> 发给服务端</li>
+<li>服务端验证 <code>cookie</code> 是否合法，如果合法就正常返回 <code>SYN+ACK</code>；并且返回<code>HTTP响应</code>；</li>
+<li>最后完成三次握手的剩余流程；</li>
+</ul>
+<h6 id="三次握手的意义">三次握手的意义<a hidden class="anchor" aria-hidden="true" href="#三次握手的意义">#</a></h6>
+<p>客户端和服务端都需要直到各自可收发，因此需要三次握手</p>
+<ul>
+<li>第一次握手成功让服务端知道了客户端具有发送能力</li>
+<li>第二次握手成功让客户端知道了服务端具有接收和发送能力，但此时服务端并不知道客户端是否接收到了自己发送的消息（如果服务端这时立刻给客户端发送数据，这个时候客户端可能还没有准备好接收数据）</li>
+<li>第三次握手让服务端知道了客户端做好了接收自己发送的消息的准备</li>
+</ul>
+<h6 id="为什么-tcp-建立连接需要三次握手而不是两次">为什么 TCP 建立连接需要三次握手，而不是两次<a hidden class="anchor" aria-hidden="true" href="#为什么-tcp-建立连接需要三次握手而不是两次">#</a></h6>
+<ul>
+<li>因为这是为了防止出现失效的连接请求报文段被服务端接收的情况，从而产生错误。</li>
+</ul>
+<h6 id="三次握手过程中可以携带数据吗">三次握手过程中可以携带数据吗<a hidden class="anchor" aria-hidden="true" href="#三次握手过程中可以携带数据吗">#</a></h6>
+<ul>
+<li><code>第一次</code>、<code>第二次</code>握手不可以携带数据，因为<code>一握二握</code>时还没有建立连接，会让服务器容易受到攻击（只需要在第一次握手的报文里放大量数据，服务器就会消耗更大的时间和内存空间去处理数据）</li>
+<li>而第三次握手，此时客户端已经处于 <code>(已建立连接状态)</code> ，对于客户端来说，已经建立起连接了，并且也已经知道服务器的接收、发送能力是正常的了，所以能携带数据也是没问题的。</li>
+</ul>
+<h5 id="四次挥手">四次挥手<a hidden class="anchor" aria-hidden="true" href="#四次挥手">#</a></h5>
+<h6 id="为什么要四次挥手--四次挥手流程">为什么要四次挥手 &amp; 四次挥手流程<a hidden class="anchor" aria-hidden="true" href="#为什么要四次挥手--四次挥手流程">#</a></h6>
+<p>因为<code>TCP</code>是全双工通信，不能单方面完全断开连接</p>
+<ul>
+<li>第一次挥手，客户端发送<code>FIN</code>给服务端</li>
+<li>第二次挥手，服务端回复<code>ACK</code>给客户端，服务端还可以继续向客户端发送数据（若数据没有发送完）</li>
+<li>第三次挥手，服务端发送<code>FIN</code>给客户端</li>
+<li>第四次挥手，客户端回复<code>ACK</code>给服务端，客户端经过 <code>2MSL</code> 的时间后断开，服务端接收到了客户端发出的<code>ACK</code>后立刻断开了到客户端的连接</li>
+</ul>
+<p>至此<code>TCP</code>连接才完全断开。</p>
+<h6 id="四次挥手结束等待-2msl-的意义">四次挥手结束等待 2MSL 的意义<a hidden class="anchor" aria-hidden="true" href="#四次挥手结束等待-2msl-的意义">#</a></h6>
+<ul>
+<li>虽然按道理，四个报文都发送完毕，就可以立即断开，但是我们必须假设网络是不可靠的，有可以最后一个<code>ACK</code>丢失。</li>
+<li>如果最后一个 <code>ACK</code> 丢失了，那么服务端没有收到 <code>ACK</code> 就会发起重传；再次发送 <code>FIN</code> 给客户端；</li>
+<li>客户端收到重传的 <code>FIN</code> 后，会重发 <code>ACK</code> 并重新等待 <code>2MSL</code> 的时间来确保服务端收到了自己的 <code>ACK</code>；</li>
+</ul>
+<p>总结：</p>
+<ul>
+<li>1 个 <code>MSL</code> 确保<code>第四次挥手</code>中<code>主动关闭方</code>最后的 <code>ACK</code> 报文最终能达到对端</li>
+<li>1 个 <code>MSL</code> 确保对端没有收到 <code>ACK</code> 重传的 <code>FIN</code> 报文可以到达</li>
+</ul>
+<h4 id="4http">4.HTTP<a hidden class="anchor" aria-hidden="true" href="#4http">#</a></h4>
+<p><code>HTTP</code> 是<code>超文本传输协议</code>，<code>HTTP</code> 是一个在计算机世界里专门在两点之间传输文字、图片、音频、视频等超文本数据的约定和规范。</p>
+<h5 id="http-的特点">HTTP 的特点<a hidden class="anchor" aria-hidden="true" href="#http-的特点">#</a></h5>
+<p>特点：<code>无连接</code>、<code>无状态</code>、<code>灵活</code></p>
+<ul>
+<li>无连接：每一次请求都要连接一次，请求结束就会断掉，不会保持连接（<code>HTTP1.1</code>后可以保持连接长连）；</li>
+<li>无状态：每一次请求都是独立的，请求结束不会记录连接的任何信息，减少了网络开销，这<code>是优点也是缺点</code></li>
+<li>灵活：通过<code>http</code>协议中头部的<code>Content-Type</code>标记，可以传输任意数据类型的数据对象(文本、图片、视频等等)，非常灵活</li>
+</ul>
+<p>缺点：<code>无状态</code>、<code>不安全</code>、<code>明文传输</code>、<code>队头阻塞</code></p>
+<ul>
+<li>无状态：请求不会记录任何连接信息，就无法区分多个请求发起者身份是不是同一个客户端的；</li>
+<li>不安全：<code>明文传输</code>可能被<code>窃听</code>，缺少<code>身份认证</code>也可能遭遇<code>伪装</code>，还有缺少<code>报文完整性验证</code>可能遭到<code>篡改</code></li>
+<li>明文传输：报文(<code>header</code>部分)使用的是明文，直接将信息暴露给了外界，<code>WIFI陷阱</code>就是复用明文传输的特点，诱导你连上热点，然后疯狂抓取你的流量，从而拿到你的<code>敏感信息</code></li>
+<li>队头阻塞：开启<code>长连接</code>(<code>下面有讲</code>)时，只建立一个<code>TCP</code>连接，同一时刻只能处理一个请求，那么当请求耗时过长时，其他请求就只能阻塞状态(<code>如何解决下面有讲</code>)</li>
+</ul>
+<h5 id="http-报文组成">HTTP 报文组成<a hidden class="anchor" aria-hidden="true" href="#http-报文组成">#</a></h5>
+<p><code>http</code>报文：由<code>请求报文</code>和<code>响应报文</code>组成</p>
+<p>请求报文：由<code>请求行</code>、<code>请求头</code>、<code>空行</code>、<code>请求体</code>四部分组成</p>
+<p>响应报文：由<code>状态行</code>、<code>响应头</code>、<code>空行</code>、<code>响应体</code>四部分组成</p>
+<ul>
+<li><strong>请求行</strong>：包括请求的方法，路径和协议版本</li>
+<li><strong>请求头/响应头</strong>：包含了请求的一些附加的信息，一般是以键值的形式成对存在</li>
+<li><strong>空行</strong>：协议中规定请求头和请求主体间必须用一个空行隔开，用来区分首部与实体，因为请求头都是<code>key:value</code>的格式，当解析遇到空行时，服务端就知道下一个不再是请求头部分，就该当作请求体来解析了；</li>
+<li><strong>请求体</strong>：对于<code>post</code>请求，所需要的参数都不会放在<code>url</code>中，这时候就需要一个载体了，这个载体就是请求主体</li>
+<li><strong>状态行</strong>：包含<code>http</code>协议及版本、数字状态码、状态码英文名称</li>
+<li><strong>响应体</strong>：服务端返回的数据</li>
+</ul>
+<h5 id="http-的请求方法">HTTP 的请求方法<a hidden class="anchor" aria-hidden="true" href="#http-的请求方法">#</a></h5>
+<ul>
+<li>
+<p><code>HTTP1.0</code>定义了三种请求方法： <code>GET</code>, <code>POST</code> 和 <code>HEAD</code>方法</p>
+</li>
+<li>
+<p><code>HTTP1.1</code>新增了五种请求方法：<code>OPTIONS</code>, <code>PUT</code>, <code>DELETE</code>, <code>TRACE</code> 和 <code>CONNECT</code></p>
+</li>
+</ul>
+<p><code>http/1.1</code>规定了以下请求方法(<code>注意，都是大写</code>):</p>
+<ul>
+<li>
+<p><code>GET</code>： 请求获取<code>Request-URI</code>所标识的资源</p>
+</li>
+<li>
+<p><code>POST</code>： 一般用于修改<code>Request-URI</code>的资源</p>
+</li>
+<li>
+<p><code>HEAD</code>： 请求获取由<code>Request-URI</code>所标识的资源的响应消息报头</p>
+</li>
+<li>
+<p><code>PUT</code>： 请求服务器存储一个资源</p>
+</li>
+<li>
+<p><code>DELETE</code>： 请求服务器删除对应所标识的资源</p>
+</li>
+<li>
+<p><code>TRACE</code>： 请求服务器回送收到的请求信息，主要用于测试或诊断</p>
+</li>
+<li>
+<p><code>CONNECT</code>： 建立连接隧道，用于代理服务器</p>
+</li>
+<li>
+<p><code>OPTIONS</code>： <code>CORS</code>跨域请求的预检请求；</p>
+</li>
+</ul>
+<h6 id="get-和-post的区别">GET 和 POST的区别<a hidden class="anchor" aria-hidden="true" href="#get-和-post的区别">#</a></h6>
+<ul>
+<li><code>从Restful语义来看</code>：<code>GET</code>用来无副作用的请求资源，理应幂等，<code>POST</code>用来新资源；</li>
+<li><code>从参数角度来看</code>：<code>GET</code>请求一般放在<code>URL</code>中，<code>POST</code>请求放在请求体中，看起来<code>post</code>比<code>get</code>安全，但是在<code>抓包</code>的情况下都是一样的（<strong>所以面试的时候别再说<code>POST</code>比<code>GET</code>安全了</strong>）。</li>
+<li><code>从编码角度看</code>：<code>GET</code>只能进行 <code>url</code> 编码，参数的数据类型只接受<code>ASCII字符</code>，而<code>POST</code>支持更多的编码类型且不对数据类型限制。</li>
+<li><code>从回退角度来看</code>：<code>GET</code>在浏览器回退时是无害的，而<code>POST</code>会再次发起请求</li>
+<li><code>从记录角度来看</code>：<code>GET</code>请求参数会被完整保留在浏览器的历史记录里，而<code>POST</code>中的参数不会被保留</li>
+<li><code>从发送角度来看</code>：<code>GET</code>请求会一次性发送请求报文，<code>POST</code>请求通常分为两个<code>TCP</code>数据包，首先发 <code>header</code> 部分，如果服务器响应 <code>100</code>， 然后发 <code>body</code> 部分。</li>
+</ul>
+<h6 id="是什么限制了get方法的url长度">是什么限制了GET方法的URL长度<a hidden class="anchor" aria-hidden="true" href="#是什么限制了get方法的url长度">#</a></h6>
+<p>从<code>HTTP协议规范</code>层面说，规范没有对<code>URL</code>的长度进行限制，是<code>浏览器、代理服务器</code>的读取有限制；</p>
+<h6 id="post方法真的不能被缓存吗">POST方法真的不能被缓存吗<a hidden class="anchor" aria-hidden="true" href="#post方法真的不能被缓存吗">#</a></h6>
+<p>默认情况下，<code>post</code>不会被<code>缓存</code>，但是如果我们有中间代理服务器（<code>Node</code>），也是可以实现缓存的；</p>
+<h5 id="http-10">HTTP 1.0<a hidden class="anchor" aria-hidden="true" href="#http-10">#</a></h5>
+<ul>
+<li><code>http1.0</code>只支持<code>POST</code>/<code>GET</code>/<code>HEAD</code>命令</li>
+<li>不支持<code>断点续传</code>，也就是说，每次都会传送全部的页面和数据。</li>
+<li>只使用 <code>header</code> 中的<code>Last-Modified</code>、<code>If-Modified-Since</code>（<code>协商缓存</code>） 和 <code>Expires</code>（<code>强缓存</code>） 作为缓存失效的标准。</li>
+</ul>
+<h5 id="http-11">HTTP 1.1<a hidden class="anchor" aria-hidden="true" href="#http-11">#</a></h5>
+<ul>
+<li>引入了<code>持久连接</code>，即<code>TCP</code>连接默认不关闭，可以被多个请求复用，不用声明<code>Connection: keep-alive</code>；</li>
+<li>引入了<code>管道机制</code>，即在同一个<code>TCP</code>连接里，客户端不用等待请求响应就可以发送多个请求，但要求服务端要按发送顺序返回；</li>
+<li>支持<code>断点续传</code>，通过使用请求头中的 <code>Range</code> 来实现（<code>206状态码</code>）。</li>
+<li><code>HTTP 1.1</code> 中新增加了 <code>E-tag</code>、<code>If-None-Match</code>、<code>Cache-Control</code> 等<code>缓存控制标头</code>来控制<code>缓存</code>失效。</li>
+<li>使用了<code>虚拟网络</code>，在一台物理服务器上可以存在多个虚拟主机，并且它们共享一个<code>IP</code>地址。</li>
+<li><code>新增方法</code>：<code>PUT</code>、 <code>OPTIONS</code>、 <code>DELETE</code>等。</li>
+<li>更多的<code>缓存标识</code>：<code>Cache-Control</code>、<code>ETag</code>、<code>If-None-Match</code></li>
+</ul>
+<blockquote>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>由于<code>队头阻塞</code>带来的高延迟</li>
+<li>巨大的<code>http</code>头部</li>
+<li>不支持服务器推送消息</li>
+</ul>
+</blockquote>
+<h5 id="http-20">HTTP 2.0<a hidden class="anchor" aria-hidden="true" href="#http-20">#</a></h5>
+<ul>
+<li><code>二进制分帧</code>：在之前的 <code>HTTP</code> 版本中，我们是通过<code>文本</code>的方式传输数据。在 <code>HTTP/2</code> 中信息和数据体都是二进制，并且统称为&quot;<code>帧</code>&quot;：用头信息帧放头部字段，用数据帧放请求数据体，是一堆乱序的二进制帧，它们不存在先后关系，因此不需要排队等待，是<code>HTTP2</code>多路复用的基础。</li>
+<li><code>头部压缩</code> <code>HTTP2</code>使用 <code>HPACK算法</code> 压缩头部然后再发送，并在两端维护了索引表，用于记录出现过的 <code>header</code>，后面在传输过程中就可以传输已经记录过的 <code>header</code> 的键名，对端收到数据后就可以通过键名找到对应的值。</li>
+<li><code>多路复用</code> 在一个连接里，可以<code>同时发送</code>多个请求或回应，且不用按顺序一一对应，这样子解决了<code>HTTP队头阻塞</code>的问题。</li>
+<li>服务器推送允许浏览器发送一个请求后，服务器主动向浏览器推送与这个请求相关的资源，这样浏览器就不用发起后续请求去获取一些资源。但是Chrome106版本禁用了，改为103状态码；
+<ul>
+<li>服务器推送时，客户端的特点：
+<ul>
+<li>客户端可以缓存推送的资源</li>
+<li>客户端可以拒收推送过来的资源</li>
+<li>服务器可以按照优先级推送资源</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="http-30">HTTP 3.0<a hidden class="anchor" aria-hidden="true" href="#http-30">#</a></h5>
+<p><code>Google</code>搞了一个基于 <code>UDP</code> 协议的 <code>QUIC</code> 协议，并且使用在了 <code>HTTP/3</code> 上</p>
+<h6 id="http3-出现原因--http2-缺点">HTTP3 出现原因 &amp; HTTP2 缺点<a hidden class="anchor" aria-hidden="true" href="#http3-出现原因--http2-缺点">#</a></h6>
+<ul>
+<li>底层协议还是<code>TCP</code>，仍然需要<code>三次握手</code>来确认连接成功，</li>
+<li><code>TCP</code>的<code>队头阻塞</code>并没有彻底解决，在 <code>HTTP2</code> 中，多个请求是跑在一个<code>TCP</code>连接中的。但当<code>HTTP/2</code>出现丢包时，整个 <code>TCP</code> 都要开始等待重传，那么就会阻塞该<code>TCP</code>连接中的所有请求。</li>
+</ul>
+<h6 id="quic">QUIC<a hidden class="anchor" aria-hidden="true" href="#quic">#</a></h6>
+<ul>
+<li>实现了快速握手功能。由于QUIC是基于UDP的，不需要三次握手，这意味着QUIC可以用最快的速度来发送和接收数据。
+<ul>
+<li><code>3RTT =&gt; 0/1 RTT</code>；根据是否要<code>TLS</code>加密</li>
+</ul>
+</li>
+<li>实现了类似TCP的可靠传输，虽然UDP不提供可靠性的传输，但QUIC在UDP的基础之上增加了一层来保证数据可靠性传输。
+<ul>
+<li>用的<code>ACK</code>模式，只是<code>QUIC</code>中包丢了就丢了，会重传一个<code>新序号</code>的包，通过包内的<code>offset</code>字段来确定这个包的位置；</li>
+</ul>
+</li>
+<li>集成了 <code>TLS</code> 加密功能，目前<code>QUIC</code>使用的是<code>TLS1.3</code>，相较于早期版本<code>TLS1.3</code>有更多的优点，其中最重要的一点是减少了握手所花费的<code>RTT</code>个数。</li>
+<li>同样也提供了<code>拥塞控制</code>机制，包括<code>慢启动</code>、<code>拥塞避免</code>等；</li>
+<li>也实现了<code>多路复用</code>，每个请求会在 <code>quic</code> 层面定义为一个 <code>stream</code>，丢包也只影响当前<code>stream</code>；彻底解决 <code>TCP</code> 中队头阻塞的问题（详细可阅读下文）</li>
+</ul>
+<h5 id="队头阻塞问题">队头阻塞问题<a hidden class="anchor" aria-hidden="true" href="#队头阻塞问题">#</a></h5>
+<blockquote>
+<p><code>队头阻塞</code>是指当顺序发送的请求序列中的一个请求因为某种原因被阻塞时，在后面排队的所有请求也一并被阻塞</p>
+</blockquote>
+<h6 id="tcp-队头阻塞">TCP 队头阻塞<a hidden class="anchor" aria-hidden="true" href="#tcp-队头阻塞">#</a></h6>
+<ul>
+<li><code>TCP</code>是可靠传输协议，当前一个数据丢失时，后面到的数据将在接收端等待到前一个丢失的数据被发送端重传并到达接收端为止</li>
+<li>这种机制保证了数据的有序正确，但也有可能造成 <code>TCP队头阻塞</code>；</li>
+</ul>
+<h6 id="http-队头阻塞">HTTP 队头阻塞<a hidden class="anchor" aria-hidden="true" href="#http-队头阻塞">#</a></h6>
+<ul>
+<li><code>HTTP1.1</code> 允许在<code>持久连接</code>上可选的使用<code>请求管道</code></li>
+<li><code>管道</code>允许客户端在已发送请求后就发送下一个请求，不需要等待前一个请求响应，借此来减少等待时间；</li>
+<li><strong>但是客户端要求服务端按照请求发送的顺序返回响应</strong>，原因很简单：<code>HTTP</code>请求和响应并没有序列号标识，无法将乱序的响应与请求关联起来；</li>
+<li>也就意味着如果一个响应返回延迟了，那么后续的响应都会延迟；这就造成了 <code>HTTP队头阻塞</code>；</li>
+</ul>
+<h6 id="解决方法">解决方法<a hidden class="anchor" aria-hidden="true" href="#解决方法">#</a></h6>
+<ul>
+<li><code>TCP队头阻塞</code>问题是 <code>TCP</code> 自身的机制决定的，无法避免，所以 <code>google</code> 才推出 <code>QUIC协议</code>，也就是所谓的 <code>HTTP3</code>；</li>
+<li><code>HTTP2</code>使用<code>帧</code>和<code>流</code>来传输数据，因为<code>流</code>的概念是虚拟的，所以<code>HTTP2</code>可以在一个<code>TCP</code>连接上用流同时发送多个<code>帧</code>，也就是所谓的多路复用：多个请求都复用一个连接来处理；</li>
+<li>在<code>流</code>的层面上看，同个<code>流</code>的帧是严格有序的，而从<code>连接</code>的层面上看，传输的都是乱序的<code>帧</code>；多个<code>请求</code>、<code>响应</code>之间没有的顺序关系；也就不需要排队等待，避免了<code>队头阻塞</code>的问题；</li>
+<li>简单来说：就是<code>HTTP2</code>通过<code>帧</code>、<code>流</code>、<code>多路复用</code>的方式，让请求和响应不用按顺序一一对应，解决队头阻塞的问题；</li>
+<li>对于 <code>HTTP1</code>来说，可以使用 <code>并发连接</code> 和 <code>域名分片</code> 来一定程度上解决问题，<code>chrome</code>对单域名 限制并发<code>6</code>个<code>TCP持久连接</code>；而<code>域名分片</code>我们可以在<code>一个域名</code>下分出多个<code>二级域名</code>，而它们最终指向同一个服务器，这样可以并发的数量就更多；</li>
+</ul>
+<h5 id="总结">总结<a hidden class="anchor" aria-hidden="true" href="#总结">#</a></h5>
+<ul>
+<li><code>HTTP/1.1</code>有两个主要的缺点：安全不足和性能不高。</li>
+<li><code>HTTP/2</code>完全兼容<code>HTTP/1</code>，头部压缩、多路复用等技术可以充分利用带宽，降低延迟，从而大幅度提高上网体验；</li>
+<li><code>QUIC</code> 是 <code>HTTP/3</code> 中的底层支撑协议，该协议基于 <code>UDP</code>，又取了 <code>TCP</code> 中的精华，实现了即快又可靠的协议。</li>
+</ul>
+<h4 id="5https">5.HTTPS<a hidden class="anchor" aria-hidden="true" href="#5https">#</a></h4>
+<p>实际上， <code>HTTPS</code> 并不是一个新的协议，它只是在 <code>HTTP</code> 和 <code>TCP</code> 的传输中建立了一个安全层，它其实就是 <code>HTTP</code> + <code>SSL/TLS</code> 协议组合而成，而安全性的保证正是 <code>SSL/TLS</code> 所做的工作。</p>
+<h5 id="https-的优缺点">HTTPS 的优缺点<a hidden class="anchor" aria-hidden="true" href="#https-的优缺点">#</a></h5>
+<p><strong>优点</strong></p>
+<ul>
+<li>使用 <code>HTTPS</code> 协议可认证用户和服务器，确保数据发送到正确的客户机和服务器</li>
+<li><code>HTTPS</code> 协议是可进行<code>加密传输、身份认证</code>的网络协议，要比 <code>http</code> 协议安全</li>
+<li><code>HTTPS</code> 是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了<code>中间人攻击</code>的成本（除非用户主动信任了伪造证书）</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>证书费用以及更新维护。</li>
+<li><code>https</code> 加密解密需要消耗更多服务器资源；</li>
+<li><code>https</code> 握手阶段比较费时，</li>
+</ul>
+<h5 id="https-和-http-区别">HTTPS 和 HTTP 区别<a hidden class="anchor" aria-hidden="true" href="#https-和-http-区别">#</a></h5>
+<ul>
+<li><code>HTTP</code> 是<code>明文传输</code>，<code>HTTPS</code> 协议是可进行<code>加密传输</code>、<code>身份认证</code>的网络协议，比 <code>HTTP</code> 协议安全。</li>
+<li><code>HTTPS</code>对<code>搜索引擎</code>更友好，利于 <code>SEO</code>；<code>谷歌</code>、<code>百度</code>优先索引 <code>HTTPS</code> 网页。</li>
+<li><code>HTTPS</code> 标准端口 <code>443</code>，<code>HTTP</code> 标准端口 <code>80</code>。</li>
+<li><code>HTTPS</code> 需要用到<code>SSL</code>证书，而 <code>HTTP</code> 不用。</li>
+</ul>
+<h5 id="https-握手">HTTPS 握手<a hidden class="anchor" aria-hidden="true" href="#https-握手">#</a></h5>
+<h6 id="握手过程">握手过程<a hidden class="anchor" aria-hidden="true" href="#握手过程">#</a></h6>
+<ul>
+<li>客户端发起 <code>HTTPS</code> 请求，发送<code>客户端生成的随机数</code>和支持的<code>加密算法列表</code>；</li>
+<li>服务端返回<code>证书</code>、<code>服务端生成的随机数</code>、<code>选择的加密方法</code>给客户端；</li>
+<li>客户端对证书进行合法性验证，验证通过后再生成一个<code>随机数</code></li>
+<li>客户端通过<code>证书中的公钥</code>对<code>随机数</code>进行加密传输到服务端，服务端接收后通过<code>私钥</code>解密得到<code>随机数</code></li>
+<li>三次握手此时已经完成，之后客户端和服务端都会根据这三个<code>随机数</code>，生成一个<code>随机对称密钥</code>，之后的数据都通过<code>随机对称密钥</code>进行<code>加密传输</code>。</li>
+</ul>
+<h6 id="客户端如何验证证书的合法性">客户端如何验证证书的合法性<a hidden class="anchor" aria-hidden="true" href="#客户端如何验证证书的合法性">#</a></h6>
+<ul>
+<li>首先浏览器读取证书中的证书所有者、有效期等信息进行一一校验。</li>
+<li>浏览器接着判断证书中的<code>颁发者CA</code>是否受信任，用以校验证书是否为合法机构颁发；</li>
+<li>如果证书不可信，浏览器就会提示证书不可信。</li>
+<li>如果证书可信，那么浏览器就会用 <code>CA机构</code> 的公钥对证书里面的签名进行解密，得到<code>hash</code>值和加密算法。</li>
+<li>再用证书里提到的加密算法，将证书的明文内容加密成另一个<code>hash</code>值，对比两个<code>hash</code>值是否相同；相同则证明服务器发来的证书合法，没有被篡改。</li>
+<li>再比对一下证书中的域名和当前请求的域名是否一致，以确保证书不会被掉包。</li>
+<li>此时浏览器就可以读取证书中的公钥，用于后续加密了。</li>
+</ul>
+<h6 id="为什么需要三个-随机数">为什么需要三个 随机数<a hidden class="anchor" aria-hidden="true" href="#为什么需要三个-随机数">#</a></h6>
+<p>因为随机数是伪随机的，三个伪随机数就十分随机了</p>
+<h4 id="6dns">6.DNS<a hidden class="anchor" aria-hidden="true" href="#6dns">#</a></h4>
+<h5 id="dns-的作用">DNS 的作用<a hidden class="anchor" aria-hidden="true" href="#dns-的作用">#</a></h5>
+<p><code>DNS</code> 的作用就是通过域名查询到具体的 <code>IP</code>。是应用层协议，通常该协议运行在<code>UDP</code>协议之上，使用的是<code>53</code>端口号。</p>
+<h5 id="dns-查询流程">DNS 查询流程<a hidden class="anchor" aria-hidden="true" href="#dns-查询流程">#</a></h5>
+<p>以 <code>Chrome</code> 为例，当你在浏览器中想访问 <code>www.google.com</code> 时，会通过进行以下操作：</p>
+<ul>
+<li><code>Chrome</code> 先查看<code>浏览器</code>自身有没有该域名的 <code>IP 缓存</code></li>
+<li><code>Chrome</code> 再查看<code>操作系</code>统有没有该域名的 <code>IP 缓存</code></li>
+<li><code>Chrome</code> 再查看 <code>Host</code> 文件有没有该域名的<code>解析配置</code></li>
+</ul>
+<p>如果在<code>hosts</code>文件中也没有找到对应的条目，浏览器就会请求本地域名服务器<code>localDNS</code>（<code>LDNS</code>）来解析这个域名。（这是递归查询的流程）</p>
+<ul>
+<li>如果 <code>LDNS</code> 也没有该域名的记录，就会进行<code>迭代查询</code>：</li>
+<li><code>LDNS</code> 先去 <code>DNS根域名服务器</code>查询，这一步查询会找出负责 <code>com</code> 这个一级域名的服务器</li>
+<li><code>LDNS</code> 再去该服务器查询 <code>google.com</code> 这个二级域名</li>
+<li><code>LDNS</code> 再去查询 <code>www.google.com</code> 这个三级域名的地址</li>
+<li><code>LDNS</code> 返回给浏览器，并<code>缓存</code>起来</li>
+</ul>
+<h5 id="递归查询-和-迭代查询">递归查询 和 迭代查询<a hidden class="anchor" aria-hidden="true" href="#递归查询-和-迭代查询">#</a></h5>
+<ul>
+<li><code>递归查询</code>指的是查询请求发出后，域名服务器代为向下一级域名服务器发出请求，最后向用户返回查询的最终结果。使用<code>递归查询</code>，用户只需要发出一次查询请求。</li>
+<li><code>迭代查询</code>指的是查询请求后，域名服务器返回单次查询的结果。下一级的查询由用户自己请求。使用<code>迭代查询</code>，用户需要发出 多次的查询请求。</li>
+</ul>
+<p>所以一般而言，<code>本地DNS服务器</code>查询是<code>递归查询</code>，而<code>本地DNS服务器</code>向<code>其他域名服务器</code>请求的过程是<code>迭代查询</code>的过程</p>
+<p>在客户端查找<code>DNS</code>缓存也就是<code>递归查询</code>；</p>
+<p><img loading="lazy" src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3db2b10f7f5b4cfe864096101119ac51~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?" alt="image.png"  />
+</p>
+<p>去查找服务端的就是<code>迭代查询</code></p>
+<p><img loading="lazy" src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2d347f938baa45f697185c4d938557f4~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?" alt="image.png"  />
+</p>
+<h5 id="dns-实现负载平衡">DNS 实现负载平衡<a hidden class="anchor" aria-hidden="true" href="#dns-实现负载平衡">#</a></h5>
+<pre tabindex="0"><code>某些大型网站一般都会使用多台服务器提供服务，因此一个域名可能对应多个服务器地址；
+</code></pre><ul>
+<li>当用户发起网站域名的 <code>DNS</code> 请求的时候，<code>DNS</code> 服务器返回这个域名所对应的服务器 <code>IP</code> 地址的集合</li>
+<li>在每个响应中，会循环这些 IP 地址的顺序，用户一般会选择排在前面的地址发送请求。</li>
+<li>以此将用户的请求均衡的分配到各个不同的服务器上，这样来实现负载均衡。</li>
+</ul>
+<p><code>还有一种负载均衡的方式，使用反向代理</code>，用户的请求都发送到反向代理服务上，然后由反向代理服务器来转发请求到真实的服务器上，以此来实现集群的负载平衡。</p>
+<h5 id="dns-为什么选择-udp-协议作为传输层协议">DNS 为什么选择 UDP 协议作为传输层协议<a hidden class="anchor" aria-hidden="true" href="#dns-为什么选择-udp-协议作为传输层协议">#</a></h5>
+<p>为了得到一个域名的 <code>IP</code> 地址，往往会向多个域名服务器查询，而<code>TCP</code>协议存在三次握手，会造成<code>DNS</code>服务变得很慢</p>
+<h4 id="7计算机网络模型">7.计算机网络模型<a hidden class="anchor" aria-hidden="true" href="#7计算机网络模型">#</a></h4>
+<h5 id="ositcpip5层模型">OSI、TCP/IP、5层模型<a hidden class="anchor" aria-hidden="true" href="#ositcpip5层模型">#</a></h5>
+<p><img loading="lazy" src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fe3ddcfed47743039faea7e17512a3c2~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?" alt="image.png"  />
+</p>
+<h5 id="各层基本作用">各层基本作用<a hidden class="anchor" aria-hidden="true" href="#各层基本作用">#</a></h5>
+<ul>
+<li>应用层：为应用程序提供网络服务；</li>
+<li>表示层：数据格式化、加密、解密；</li>
+<li>会话层：建立、维护、管理会话连接；</li>
+<li>传输层：建立、维护、管理到端连接；</li>
+<li>网络层：IP寻址和路由选择；</li>
+<li>数据链路层：控制网络层与物理层之间通信；</li>
+<li>物理层：通过光缆、无线电波等方式连接组网；传输比特流<code>0</code>和<code>1</code>；</li>
+</ul>
+<h5 id="网络层-ip寻址-和-路由">网络层 IP寻址 和 路由<a hidden class="anchor" aria-hidden="true" href="#网络层-ip寻址-和-路由">#</a></h5>
+<pre tabindex="0"><code>寻址就是根据IP地址找到具体的设备。
+</code></pre><ul>
+<li>因为<code>IPv4</code>的网络是一个树状模型，顶层网络下方有多个子网，子网下方还有子网，最后才是设备；<code>IP</code>协议的寻址过程就是要逐级找到网络，最后定位设备；</li>
+</ul>
+<pre tabindex="0"><code>路由就是选择数据传输的线路
+</code></pre><ul>
+<li>在寻址过程中，数据总是存在于某个局域网中。如果目的地在局域网中，就可以直接定位到设备了；但是如果目的地不在局域网中，这个时候就需要再去往其它网络。</li>
+<li>由于网络和网络之间是网关在链接，所以如果目的地<code>IP</code>不在局域网中，就要为<code>IP</code>封包选择通往下一个网络的路径，也就是选择其中一个网关；</li>
+<li>当包去往下一个节点后，就进入了新的路由节点，然后就继续上述过程，直到最终定位到设备；</li>
+</ul>
+<p>网络层就是通过<code>IP</code>寻址找到最终的设备，又要借助路由在每个节点选择数据传输的线路，所以路由和寻址是相辅相成的关系；</p>
+<h4 id="8websocket">8.WebSocket<a hidden class="anchor" aria-hidden="true" href="#8websocket">#</a></h4>
+<ul>
+<li><code>WebSocket</code> 是 <code>Html5</code> 定义的一个新协议，出现的目的是<code>即时通讯</code>，<code>替代轮询</code></li>
+<li>与传统的 <code>http</code> 协议不同，它实现了浏览器与服务器<code>全双工通信</code>。</li>
+</ul>
+<h5 id="http-与-websocket">HTTP 与 WebSocket<a hidden class="anchor" aria-hidden="true" href="#http-与-websocket">#</a></h5>
+<pre tabindex="0"><code>相同点：
+</code></pre><ul>
+<li>都是一样基于<code>TCP</code>的应用层协议，都是可靠性传输协议。</li>
+</ul>
+<pre tabindex="0"><code>不同点：
+</code></pre><ul>
+<li><code>WebSocket</code> 是全双工通信协议，通信双方可以实时且同时发送和接收消息。而<code>HTTP</code>是单向的；</li>
+<li><code>WebSocket</code> 没有了 <code>Request</code> 和 <code>Response</code> 的概念</li>
+<li><code>WebSocket</code> 需要依赖 <code>HTTP</code> 协议进行一次握手。握手成功过后数据就直接从 <code>TCP</code> 通道传输，与 <code>HTTP</code> 无关；</li>
+<li><code>WebSocket</code> 数据格式比较轻量，它的据包头部较小，而<code>HTTP</code>协议每次通信都需要携带完整的头部</li>
+<li><code>WebSocket</code> 无跨域问题</li>
+</ul>
+<h5 id="websocket-握手协议-与-http握手-的区别">WebSocket 握手协议 与 Http握手 的区别<a hidden class="anchor" aria-hidden="true" href="#websocket-握手协议-与-http握手-的区别">#</a></h5>
+<p><code>WebSocket</code> 的握手协议相比 <code>Http</code>原本的握手协议 ，多了两个属性：</p>
+<ul>
+<li><code>Upgrade:webSocket</code></li>
+<li><code>Connection:Upgrade</code></li>
+</ul>
+<p>客户端发送的握手协议，带有两个额外的属性，服务端就会返回<code>101</code>状态码，客户端收到<code>101</code>状态码后就成功</p>
+<h5 id="websocket-心跳">WebSocket 心跳<a hidden class="anchor" aria-hidden="true" href="#websocket-心跳">#</a></h5>
+<p>可能会有某些未知情况导致 <code>socket</code> 断开，而客户端和服务端却不知道，需要客户端定时发送一个 心跳 <code>ping</code> 让服务端知道自己在线</p>
+<p>服务端也需要回答一个 心跳 <code>pong</code> 告诉客户端自己可用，否则视为断开。</p>
+<h5 id="websocket-状态">WebSocket 状态<a hidden class="anchor" aria-hidden="true" href="#websocket-状态">#</a></h5>
+<blockquote>
+<p><code>WebSocket</code> 对象中的 <code>readyState</code> 属性有四种状态：</p>
+</blockquote>
+<ul>
+<li><code>0</code>：表示正在连接</li>
+<li><code>1</code>：表示连接成功，可以通信了</li>
+<li><code>2</code>：表示连接正在关闭</li>
+<li><code>3</code>：表示连接已经关闭，或者打开连接失败</li>
+</ul>
+<h5 id="websocket-和-socket-的区别">Websocket 和 socket 的区别<a hidden class="anchor" aria-hidden="true" href="#websocket-和-socket-的区别">#</a></h5>
+<ul>
+<li><code>Socket</code>是应用层与<code>TCP/IP协议</code>通信的中间软件抽象层，它是一组接口。</li>
+<li>而<code>WebSocket</code>则不同，它是一个完整的应用层协议，包含一套标准的<code>API</code>。</li>
+</ul>
+<h4 id="9即时通信方案">9.即时通信方案<a hidden class="anchor" aria-hidden="true" href="#9即时通信方案">#</a></h4>
+<blockquote>
+<p>即时通信方案，也就是指两个客户机能够同时的收发消息；</p>
+</blockquote>
+<h5 id="方案选择">方案选择<a hidden class="anchor" aria-hidden="true" href="#方案选择">#</a></h5>
+<ul>
+<li><code>短轮询</code>：前端用定时器每隔一段时间就<code>ajax</code>向后端获取更新；</li>
+<li><code>长轮询</code>：长轮询是短轮询的改进，请求到服务端后会被挂起，直到有新的消息才会返回响应；然后再重新发起请求；</li>
+<li><code>基于流</code>：基于流的推送技术就是指 <code>SSE</code>；<code>SSE</code>是一个<code>H5</code>的属性，它只能由服务器向浏览器发送数据，所以协作式通过 <code>http</code> 发送消息，<code>sse</code> 接受消息；</li>
+<li><code>Websocket</code>：<code>WebSocket</code> 是 <code>HTML5</code> 开始提供的一种在单个 <code>TCP</code> 连接上进行<code>全双工通信</code>的协议；钉钉表格就是用的原生<code>WebSocket</code>；</li>
+<li><code>Socket.io</code>：其实 <code>Socket.IO</code> 只是为了解决 <code>websocket</code> 的兼容性的一个解决方案，因为<code>websocket</code>出现的较新，所以一些老的浏览器兼容性不好，而 <code>Socket.IO</code>就是将<code>websocket</code>、<code>长轮询</code>两种<code>通信方式</code>封装成了统一的通信接口进行降级兼容；</li>
+</ul>
+<h5 id="单工半双工和全双工通信">单工、半双工和全双工通信<a hidden class="anchor" aria-hidden="true" href="#单工半双工和全双工通信">#</a></h5>
+<ul>
+<li>
+<p><code>单工通信是</code>指消息只能单方向传输的工作方式，数据信息从一端到另一端是单方向的。例：广播。</p>
+</li>
+<li>
+<p><code>半双工通信</code>可以实现双向的通信，但是不能在两个方向同时进行，必须交替进行。这中模式下，接收端和发送端可以互相转换。例：对讲机。</p>
+</li>
+<li>
+<p><code>全双工通信</code>是指在通信的任意时刻，都允许数据同时在两个方向上传输，在这个模式下，通信系统的每一端都设置了发送器和接收器</p>
+</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://yurooc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li>
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://yurooc.github.io">YuBlog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+    
+    <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+    <span id="busuanzi_container_site_uv">
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次
+    </span>
+    </div></footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

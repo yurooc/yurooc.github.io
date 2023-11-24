@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Ajax面经 | YuBlog</title>
+<meta name="keywords" content="Ajax">
+<meta name="description" content="Ajax面经">
+<meta name="author" content="Yu">
+<link rel="canonical" href="https://yurooc.github.io/blog/ajax%E9%9D%A2%E8%AF%95%E9%A2%98/">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <meta name="referrer" content="no-referrer-when-downgrade">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.678b5c47efa744d2e0dd0d61101075e6aecdc9a0631e7ad8538f4ec0cca79273.css" integrity="sha256-Z4tcR&#43;&#43;nRNLg3Q1hEBB15q7NyaBjHnrYU49OwMynknM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://yurooc.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://yurooc.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://yurooc.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://yurooc.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://yurooc.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="Ajax面经" />
+<meta property="og:description" content="Ajax面经" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yurooc.github.io/blog/ajax%E9%9D%A2%E8%AF%95%E9%A2%98/" /><meta property="article:section" content="Blog" />
+<meta property="article:published_time" content="2023-11-25T00:40:00+08:00" />
+<meta property="article:modified_time" content="2023-11-25T00:40:00+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ajax面经"/>
+<meta name="twitter:description" content="Ajax面经"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Blogs",
+      "item": "https://yurooc.github.io/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Ajax面经",
+      "item": "https://yurooc.github.io/blog/ajax%E9%9D%A2%E8%AF%95%E9%A2%98/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ajax面经",
+  "name": "Ajax面经",
+  "description": "Ajax面经",
+  "keywords": [
+    "Ajax"
+  ],
+  "articleBody": "Ajax面试题 1什么是ajax？ajax作用是什么？ AJAX = 异步 JavaScript 和 XML。 AJAX 是一种用于创建快速动态网页的技术。 通过在后台与服务器进行少量数据交换,AJAX 可以使网页实现异步更新.\n2、为什么要用ajax：\nAjax应用程序的优势在于：\n通过异步模式，提升了用户体验 优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用 Ajax引擎在客户端运行，承担了一部分本来由服务器承担的工作，从而减少了大用户量下的服务器负载。 3.AJAX最大的特点是什么。 Ajax可以实现动态不刷新（局部刷新） 就是能在不更新整个页面的前提下维护数据。这使得Web应用程序更为迅捷地回应用户动作，并避免了在网络上发送那些没有改变过的信息。\n4、请介绍一下XMLHttprequest对象。 Ajax的核心是JavaScript对象XmlHttpRequest。该对象在Internet Explorer 5中首次引入，它是一种支持异步请求的技术。简而言之，XmlHttpRequest使您可以使用JavaScript向服务器提出请求并处理响应，而不阻塞用户。通过XMLHttpRequest对象，Web开发人员可以在页面加载以后进行页面的局部更新。 5、AJAX技术体系的组成部分有哪些。 HTML，css，dom，xml，xmlHttpRequest，javascript\n6:原生js ajax请求有几个步骤？分别是什么 //创建 XMLHttpRequest 对象 var ajax = new XMLHttpRequest(); //规定请求的类型、URL 以及是否异步处理请求。 ajax.open('GET',url,true); //发送信息至服务器时内容编码类型 ajax.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\"); //发送请求 ajax.send(null); //接受服务器响应数据 ajax.onreadystatechange = function () { if (obj.readyState == 4 \u0026\u0026 (obj.status == 200 || obj.status == 304)) { } }; 7:json字符串转换集json对象、json对象转换json字符串\n//字符串转对象\nJSON.parse(json)\neval(’(’ + jsonstr + ‘)’)\n// 对象转字符串\nJSON.stringify(json)\nEval() json.parse()区别？？？？\n第一种方式：eval（）；\nvar data=’{“student”：[{“name”:“张三”,“age”:“11”}，{“name”:“李四”,“age”:“11”},{“name”:“王五”,“age”:“11”}]}’；\neval（’（“+data+”）’）;\n第二种方式：JSON.parse（）；\nvar data=’{“student”：[{“name”:“张三”,“age”:“11”}，{“name”:“李四”,“age”:“11”},{“name”:“王五”,“age”:“11”}]}’；\nJSON.parse（data）；\n区别：eval方法不会去检查给的字符串时候符合json的格式~同时如果给的字符串中存在js代码eval也会一并执行~比如:\nvar data=’{“student”：[{“name”:“张三”,“age”:“11”}，{“name”:“李四”,“age”:“alert(11)”},{“name”:“王五”,“age”:“11”}]}’；\n此时执行eval方法后会先弹出一个提示框输出11的字符串;\n这时候使用JSON.parse()就会报错,显示错误信息为当前字符串不符合json格式;即JSON.parse()方法会检查需要转换的字符串是否符合json格式.\n相比而言eval方法是很不安全，特别是当涉及到第三方时我们需要确保传给eval的参数是我们可以控制的，不然里面插入比如window.location~指向一个恶意的连接\n总的来说，还是推荐使用JSON.parse来实现json格式字符串的解析。\n8.什么是JSON？ JSON是一种轻量级的数据交换格式。\n9:ajax几种请求方式？他们的优缺点？ 常用的post,get,delete put\n###代码上的区别 1:get通过url传递参数 2:post设置请求头 规定请求数据类型 ###使用上的区别 1:post比get安全 (因为post参数在请求体中。get参数在url上面) 2:get传输速度比post快 根据传参决定的。 (post通过请求体传参，后台通过数据流接收。速度稍微慢一些。而get通过url传参可以直接获取) 3:post传输文件大理论没有限制 get传输文件小大概7-8k ie4k左右 4:get获取数据 post上传数据 (上传的数据比较多 而且上传数据都是重要数据。所以不论在安全性还是数据量级 post是最好的选择) 10.什么情况造成跨域？ 同源策略限制 不同源会造成跨域。以下任意一种情况不同，都是不同源。\n同源：协议 域名 端口号全部相同 只要有一个不相同就是非同源策略\n11.跨域解决方案有哪些？ 原理：动态创建一个script标签。利用script标签的src属性不受同源策略限制。因为所有的src属性和href属性都不受同源策略限制。可以请求第三方服务器数据内容。\n步骤：\n去创建一个script标签 script的src属性设置接口地址 接口参数,必须要带一个自定义函数名 要不然后台无法返回数据。 通过定义函数名去接收后台返回数据 //去创建一个script标签 var script = document.createElement(\"script\"); //script的src属性设置接口地址 并带一个callback回调函数名称 script.src = \"http://127.0.0.1:8888/index.php?callback=jsonpCallback\"; //插入到页面 document.head.appendChild(script); //通过定义函数名去接收后台返回数据function jsonpCallback(data){ //注意 jsonp返回的数据是json对象可以直接使用 //ajax 取得数据是json字符串需要转换成json对象才可以使用。 } CORS：跨域资源共享 原理：服务器设置Access-Control-Allow-OriginHTTP响应头之后，浏览器将会允许跨域请求\n限制：浏览器需要支持HTML5，可以支持POST，PUT等方法兼容ie9以上\n需要后台设置 Access-Control-Allow-Origin: * //允许所有域名访问，或者 Access-Control-Allow-Origin: http://a.com //只允许所有域名访问 3.反向代理\n4.window+iframe\n15 介绍一下XMLHttpRequest对象的常用方法和属性 open(“method”,”URL”) 建立对服务器的调用，第一个参数是HTTP请求 方式可以为GET，POST或任何服务器所支持的您想调用的方式。 第二个参数是请求页面的URL。 send()方法，发送具体请求 abort()方法，停止当前请求 readyState属性 请求的状态 有5个可取值0=未初始化 ，1=正在加载 2=以加载，3=交互中，4=完成 responseText 属性 服务器的响应，表示为一个串 reponseXML 属性 服务器的响应，表示为XML status 服务器的HTTP状态码，200对应ok 400对应not found\n16什么是XML XML是扩展标记语言，能够用一系列简单的标记描述数据\n17.AJAX都有哪些优点和缺点？ 1、最大的一点是页面无刷新，用户的体验非常好。 2、使用异步方式与服务器通信，具有更加迅速的响应能力。 3、可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。并且减轻服务器的负担，ajax的原则是“按需取数据”，可以最大程度的减少冗余请求，和响应对服务器造成的负担。 4、基于标准化的并被广泛支持的技术，不需要下载插件或者小程序。\najax的缺点 1、ajax不支持浏览器back按钮。 2、安全问题 AJAX暴露了与服务器交互的细节。 3、对搜索引擎的支持比较弱。 4、破坏了程序的异常机制。 5、不容易调试。\n",
+  "wordCount" : "3370",
+  "inLanguage": "en",
+  "datePublished": "2023-11-25T00:40:00+08:00",
+  "dateModified": "2023-11-25T00:40:00+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Yu"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yurooc.github.io/blog/ajax%E9%9D%A2%E8%AF%95%E9%A2%98/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "YuBlog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://yurooc.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://yurooc.github.io" accesskey="h" title="YuBlog (Alt + H)">YuBlog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://yurooc.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://yurooc.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://yurooc.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://yurooc.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/yurooc" title="GitHub">
+                    <span>GitHub</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://yurooc.github.io">Home</a>&nbsp;»&nbsp;<a href="https://yurooc.github.io/blog/">Blogs</a></div>
+    <h1 class="post-title">
+      Ajax面经
+    </h1>
+    <div class="post-description">
+      Ajax面经
+    </div>
+    <div class="post-meta"><span title='2023-11-25 00:40:00 +0800 CST'>November 25, 2023</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;3370 words&nbsp;·&nbsp;Yu
+
+
+      <div  class="meta-item">&nbsp·&nbsp
+      <span id="busuanzi_container_page_pv">本文阅读量<span id="busuanzi_value_page_pv"></span>次</span>
+    </div>
+    </div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#ajax%e9%9d%a2%e8%af%95%e9%a2%98" aria-label="Ajax面试题">Ajax面试题</a><ul>
+                            
+                    <li>
+                        <a href="#1%e4%bb%80%e4%b9%88%e6%98%afajaxajax%e4%bd%9c%e7%94%a8%e6%98%af%e4%bb%80%e4%b9%88" aria-label="1什么是ajax？ajax作用是什么？">1什么是ajax？ajax作用是什么？</a></li>
+                    <li>
+                        <a href="#6%e5%8e%9f%e7%94%9fjs-ajax%e8%af%b7%e6%b1%82%e6%9c%89%e5%87%a0%e4%b8%aa%e6%ad%a5%e9%aa%a4%e5%88%86%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88" aria-label="6:原生js ajax请求有几个步骤？分别是什么">6:原生js ajax请求有几个步骤？分别是什么</a></li>
+                    <li>
+                        <a href="#8%e4%bb%80%e4%b9%88%e6%98%afjson" aria-label="8.什么是JSON？">8.什么是JSON？</a></li>
+                    <li>
+                        <a href="#9ajax%e5%87%a0%e7%a7%8d%e8%af%b7%e6%b1%82%e6%96%b9%e5%bc%8f%e4%bb%96%e4%bb%ac%e7%9a%84%e4%bc%98%e7%bc%ba%e7%82%b9" aria-label="9:ajax几种请求方式？他们的优缺点？">9:ajax几种请求方式？他们的优缺点？</a></li>
+                    <li>
+                        <a href="#10%e4%bb%80%e4%b9%88%e6%83%85%e5%86%b5%e9%80%a0%e6%88%90%e8%b7%a8%e5%9f%9f" aria-label="10.什么情况造成跨域？"><strong>10.什么情况造成跨域？</strong></a></li>
+                    <li>
+                        <a href="#11%e8%b7%a8%e5%9f%9f%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88%e6%9c%89%e5%93%aa%e4%ba%9b" aria-label="11.跨域解决方案有哪些？">11.跨域解决方案有哪些？</a></li>
+                    <li>
+                        <a href="#15-%e4%bb%8b%e7%bb%8d%e4%b8%80%e4%b8%8bxmlhttprequest%e5%af%b9%e8%b1%a1%e7%9a%84%e5%b8%b8%e7%94%a8%e6%96%b9%e6%b3%95%e5%92%8c%e5%b1%9e%e6%80%a7" aria-label="15 介绍一下XMLHttpRequest对象的常用方法和属性">15 介绍一下XMLHttpRequest对象的常用方法和属性</a></li>
+                    <li>
+                        <a href="#16%e4%bb%80%e4%b9%88%e6%98%afxml" aria-label="16什么是XML">16什么是XML</a></li>
+                    <li>
+                        <a href="#17ajax%e9%83%bd%e6%9c%89%e5%93%aa%e4%ba%9b%e4%bc%98%e7%82%b9%e5%92%8c%e7%bc%ba%e7%82%b9" aria-label="17.AJAX都有哪些优点和缺点？">17.AJAX都有哪些优点和缺点？</a>
+                    </li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+  <div class="post-content"><h1 id="ajax面试题">Ajax面试题<a hidden class="anchor" aria-hidden="true" href="#ajax面试题">#</a></h1>
+<h2 id="1什么是ajaxajax作用是什么">1什么是ajax？ajax作用是什么？<a hidden class="anchor" aria-hidden="true" href="#1什么是ajaxajax作用是什么">#</a></h2>
+<p>AJAX = 异步 JavaScript 和 XML。 <strong>AJAX 是一种用于创建快速动态网页的技术</strong>。 通过在后台与服务器进行少量数据交换,AJAX 可以使网页实现异步更新.</p>
+<p>2、为什么要用ajax：</p>
+<p>Ajax应用程序的优势在于：</p>
+<ol>
+<li>通过异步模式，提升了用户体验</li>
+<li>优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用</li>
+<li>Ajax引擎在客户端运行，承担了一部分本来由服务器承担的工作，从而减少了大用户量下的服务器负载。</li>
+</ol>
+<p>3.AJAX最大的特点是什么。
+Ajax可以实现动态不刷新（局部刷新）
+就是能在不更新整个页面的前提下维护数据。这使得Web应用程序更为迅捷地回应用户动作，并避免了在网络上发送那些没有改变过的信息。</p>
+<p>4、请介绍一下XMLHttprequest对象。
+Ajax的核心是JavaScript对象XmlHttpRequest。该对象在Internet Explorer 5中首次引入，它是一种支持异步请求的技术。简而言之，XmlHttpRequest使您可以使用JavaScript向服务器提出请求并处理响应，而不阻塞用户。通过XMLHttpRequest对象，Web开发人员可以在页面加载以后进行页面的局部更新。
+5、AJAX技术体系的组成部分有哪些。
+HTML，css，dom，xml，xmlHttpRequest，javascript</p>
+<h2 id="6原生js-ajax请求有几个步骤分别是什么">6:原生js ajax请求有几个步骤？分别是什么<a hidden class="anchor" aria-hidden="true" href="#6原生js-ajax请求有几个步骤分别是什么">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//创建 XMLHttpRequest 对象
+</span></span><span style="display:flex;"><span>var ajax = new XMLHttpRequest();
+</span></span><span style="display:flex;"><span>//规定请求的类型、URL 以及是否异步处理请求。
+</span></span><span style="display:flex;"><span>ajax.open(&#39;GET&#39;,url,true);
+</span></span><span style="display:flex;"><span>//发送信息至服务器时内容编码类型
+</span></span><span style="display:flex;"><span>ajax.setRequestHeader(&#34;Content-type&#34;, &#34;application/x-www-form-urlencoded&#34;); 
+</span></span><span style="display:flex;"><span>//发送请求
+</span></span><span style="display:flex;"><span>ajax.send(null);  
+</span></span><span style="display:flex;"><span>//接受服务器响应数据
+</span></span><span style="display:flex;"><span>ajax.onreadystatechange = function () {
+</span></span><span style="display:flex;"><span>    if (obj.readyState == 4 &amp;&amp; (obj.status == 200 || obj.status == 304)) { 
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><strong>7:json字符串转换集json对象、json对象转换json字符串</strong></p>
+<p>//字符串转对象</p>
+<p>JSON.parse(json)</p>
+<p>eval(&rsquo;(&rsquo; + jsonstr + &lsquo;)&rsquo;)</p>
+<p>// 对象转字符串</p>
+<p>JSON.stringify(json)</p>
+<p>Eval() json.parse()区别？？？？</p>
+<p>第一种方式：eval（）；</p>
+<p>var data=&rsquo;{&ldquo;student&rdquo;：[{&ldquo;name&rdquo;:&ldquo;张三&rdquo;,&ldquo;age&rdquo;:&ldquo;11&rdquo;}，{&ldquo;name&rdquo;:&ldquo;李四&rdquo;,&ldquo;age&rdquo;:&ldquo;11&rdquo;},{&ldquo;name&rdquo;:&ldquo;王五&rdquo;,&ldquo;age&rdquo;:&ldquo;11&rdquo;}]}’；</p>
+<p>eval（’（“+data+”）’）;</p>
+<p>第二种方式：JSON.parse（）；</p>
+<p>var data=&rsquo;{&ldquo;student&rdquo;：[{&ldquo;name&rdquo;:&ldquo;张三&rdquo;,&ldquo;age&rdquo;:&ldquo;11&rdquo;}，{&ldquo;name&rdquo;:&ldquo;李四&rdquo;,&ldquo;age&rdquo;:&ldquo;11&rdquo;},{&ldquo;name&rdquo;:&ldquo;王五&rdquo;,&ldquo;age&rdquo;:&ldquo;11&rdquo;}]}’；</p>
+<p>JSON.parse（data）；</p>
+<p>区别：eval方法不会去检查给的字符串时候符合json的格式~同时如果给的字符串中存在js代码eval也会一并执行~比如:</p>
+<p>var data=&rsquo;{&ldquo;student&rdquo;：[{&ldquo;name&rdquo;:&ldquo;张三&rdquo;,&ldquo;age&rdquo;:&ldquo;11&rdquo;}，{&ldquo;name&rdquo;:&ldquo;李四&rdquo;,&ldquo;age&rdquo;:&ldquo;alert(11)&rdquo;},{&ldquo;name&rdquo;:&ldquo;王五&rdquo;,&ldquo;age&rdquo;:&ldquo;11&rdquo;}]}’；</p>
+<p>此时执行eval方法后会先弹出一个提示框输出11的字符串;</p>
+<p>这时候使用JSON.parse()就会报错,显示错误信息为当前字符串不符合json格式;即JSON.parse()方法会检查需要转换的字符串是否符合json格式.</p>
+<p>相比而言eval方法是很不安全，特别是当涉及到第三方时我们需要确保传给eval的参数是我们可以控制的，不然里面插入比如window.location~指向一个恶意的连接</p>
+<p>总的来说，还是推荐使用JSON.parse来实现json格式字符串的解析。</p>
+<h2 id="8什么是json">8.什么是JSON？<a hidden class="anchor" aria-hidden="true" href="#8什么是json">#</a></h2>
+<p>JSON是一种轻量级的数据交换格式。</p>
+<h2 id="9ajax几种请求方式他们的优缺点">9:ajax几种请求方式？他们的优缺点？<a hidden class="anchor" aria-hidden="true" href="#9ajax几种请求方式他们的优缺点">#</a></h2>
+<p>常用的post,get,delete put</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>###代码上的区别
+</span></span><span style="display:flex;"><span> 1:get通过url传递参数
+</span></span><span style="display:flex;"><span> 2:post设置请求头  规定请求数据类型
+</span></span><span style="display:flex;"><span>###使用上的区别
+</span></span><span style="display:flex;"><span> 1:post比get安全
+</span></span><span style="display:flex;"><span> (因为post参数在请求体中。get参数在url上面)
+</span></span><span style="display:flex;"><span> 2:get传输速度比post快 根据传参决定的。
+</span></span><span style="display:flex;"><span> (post通过请求体传参，后台通过数据流接收。速度稍微慢一些。而get通过url传参可以直接获取)
+</span></span><span style="display:flex;"><span> 3:post传输文件大理论没有限制  get传输文件小大概7-8k ie4k左右
+</span></span><span style="display:flex;"><span> 4:get获取数据  post上传数据
+</span></span><span style="display:flex;"><span> (上传的数据比较多  而且上传数据都是重要数据。所以不论在安全性还是数据量级 post是最好的选择)
+</span></span></code></pre></div><h2 id="10什么情况造成跨域"><strong>10.什么情况造成跨域？</strong><a hidden class="anchor" aria-hidden="true" href="#10什么情况造成跨域">#</a></h2>
+<p>同源策略限制 不同源会造成跨域。以下任意一种情况不同，都是不同源。</p>
+<p>同源：协议 域名 端口号全部相同 只要有一个不相同就是非同源策略</p>
+<h2 id="11跨域解决方案有哪些">11.跨域解决方案有哪些？<a hidden class="anchor" aria-hidden="true" href="#11跨域解决方案有哪些">#</a></h2>
+<p><strong>原理：动态创建一个script标签</strong>。利用script标签的src属性不受同源策略限制。因为所有的src属性和href属性都不受同源策略限制。可以请求第三方服务器数据内容。</p>
+<p>步骤：</p>
+<ol>
+<li>去创建一个script标签</li>
+<li>script的src属性设置接口地址</li>
+<li>接口参数,必须要带一个自定义函数名 要不然后台无法返回数据。</li>
+<li>通过定义函数名去接收后台返回数据</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//去创建一个script标签
+</span></span><span style="display:flex;"><span>var  script = document.createElement(&#34;script&#34;);
+</span></span><span style="display:flex;"><span>//script的src属性设置接口地址 并带一个callback回调函数名称
+</span></span><span style="display:flex;"><span>script.src = &#34;http://127.0.0.1:8888/index.php?callback=jsonpCallback&#34;;
+</span></span><span style="display:flex;"><span>//插入到页面
+</span></span><span style="display:flex;"><span>document.head.appendChild(script);
+</span></span><span style="display:flex;"><span>//通过定义函数名去接收后台返回数据function jsonpCallback(data){
+</span></span><span style="display:flex;"><span>    //注意  jsonp返回的数据是json对象可以直接使用
+</span></span><span style="display:flex;"><span>    //ajax  取得数据是json字符串需要转换成json对象才可以使用。
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="2">
+<li>CORS：跨域资源共享</li>
+</ol>
+<p>原理：服务器设置Access-Control-Allow-OriginHTTP响应头之后，浏览器将会允许跨域请求</p>
+<p>限制：浏览器需要支持HTML5，可以支持POST，PUT等方法兼容ie9以上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>需要后台设置
+</span></span><span style="display:flex;"><span>Access-Control-Allow-Origin: *              //允许所有域名访问，或者
+</span></span><span style="display:flex;"><span>Access-Control-Allow-Origin: http://a.com   //只允许所有域名访问
+</span></span></code></pre></div><p>3.反向代理</p>
+<p>4.window+iframe</p>
+<h2 id="15-介绍一下xmlhttprequest对象的常用方法和属性">15 介绍一下XMLHttpRequest对象的常用方法和属性<a hidden class="anchor" aria-hidden="true" href="#15-介绍一下xmlhttprequest对象的常用方法和属性">#</a></h2>
+<p>open(“method”,”URL”) 建立对服务器的调用，第一个参数是HTTP请求 方式可以为GET，POST或任何服务器所支持的您想调用的方式。
+第二个参数是请求页面的URL。
+send()方法，发送具体请求
+abort()方法，停止当前请求
+readyState属性 请求的状态 有5个可取值0=未初始化 ，1=正在加载
+2=以加载，3=交互中，4=完成
+responseText 属性 服务器的响应，表示为一个串
+reponseXML 属性 服务器的响应，表示为XML
+status 服务器的HTTP状态码，200对应ok 400对应not found</p>
+<h2 id="16什么是xml">16什么是XML<a hidden class="anchor" aria-hidden="true" href="#16什么是xml">#</a></h2>
+<p>XML是扩展标记语言，能够用一系列简单的标记描述数据</p>
+<h2 id="17ajax都有哪些优点和缺点">17.AJAX都有哪些优点和缺点？<a hidden class="anchor" aria-hidden="true" href="#17ajax都有哪些优点和缺点">#</a></h2>
+<p>1、最大的一点是页面无刷新，用户的体验非常好。
+2、使用异步方式与服务器通信，具有更加迅速的响应能力。
+3、可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。并且减轻服务器的负担，ajax的原则是“按需取数据”，可以最大程度的减少冗余请求，和响应对服务器造成的负担。
+4、基于标准化的并被广泛支持的技术，不需要下载插件或者小程序。</p>
+<p>ajax的缺点
+1、ajax不支持浏览器back按钮。
+2、安全问题 AJAX暴露了与服务器交互的细节。
+3、对搜索引擎的支持比较弱。
+4、破坏了程序的异常机制。
+5、不容易调试。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://yurooc.github.io/tags/ajax/">Ajax</a></li>
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://yurooc.github.io">YuBlog</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+    
+    <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+    <span id="busuanzi_container_site_uv">
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次
+    </span>
+    </div></footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
